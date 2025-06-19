@@ -1,0 +1,92 @@
+\chapter{Introducere}
+\label{cap:cap1}
+
+Evoluția tehnologică accelerată din ultimele decenii a generat transformări profunde în multiple sectoare ale societății, influențând fundamental modul de acces la informație, furnizarea serviciilor și interacțiunile cotidiene. Aceste progrese au facilitat materializarea unor soluții tehnice care, anterior, erau considerate concepte futuriste. În acest context, tehnologiile de realitate augmentată (AR) și realitate virtuală (VR) s-au conturat ca domenii inovatoare, cu un potențial semnificativ de a reconfigura experiența umană în mediul digital.
+
+În România, deși adoptarea pe scară largă a tehnologiilor AR și VR se află într-un stadiu emergent, parțial condiționată de factori precum costurile echipamentelor specializate și dezvoltarea infrastructurii aferente, perspectivele de aplicabilitate sunt considerabile. Realitatea augmentată și realitatea virtuală permit crearea, controlul și personalizarea avansată a experiențelor digitale, oferind noi paradigme pentru interacțiunea utilizatorului cu conținutul virtual. De la educație și medicină, până la divertisment și turism virtual, aplicațiile realizate în realitatea virtuală sunt aproape nelimitate, în sensul că imaginația este singura limită pe care o avem. În ciuda popularității reduse la nivel local, interesul pentru realitatea virtuală este în creștere, iar odată cu evoluția platformelor ce pot aduce ideile în realitate (Unreal Engine, Unity, Godot, etc.) și integrarea unor tehnologii avansate disponibile la nivel de procesor, procesor grafic și software avansat fac posibilă construirea unor experiențe vizuale fluide, realiste și accesibile unui public tot mai larg.
+
+Lucrarea intitulată „VR Museum” este un program realizat în Unreal Engine, iar împreună cu câteva plugin-uri dezvoltate de Nvidia, reprezintă un muzeu prezentat în realitate virtuală, în care utilizatorul se poate plimba liber printre mai multe exponate, amplasate atât în interiorul muzeului, cât și în exteriorul acestuia. 
+
+Experiența a fost concepută cu scopul de a oferi o lume cât mai apropiată de realitate, dedicată inclusiv persoanelor care nu se pot deplasa fizic într-un muzeu - fie din cauza distanței, a timpului limitat sau a gradului redus de accesibilitate.
+
+Promovând ideea de „cultură la un click distanță”, VR Museum este disponibil gratuit și poate fi descărcat pe orice laptop sau computer care îndeplinește cerințele minime de sistem necesare pentru rulare. Proiectul este unul unic în România în ceea ce privește digitalizarea muzeelor de științe naturale, adresând un gol semnificativ în peisajul local al aplicațiilor educaționale de tip “immersive”.
+
+De asemenea, codul sursă al aplicației (proiectul dezvoltat în Unreal Engine) este disponibil public și poate fi accesat fără niciun cost. Astfel, el poate fi folosit ca o bază, un punct de plecare pentru extinderi ulterioare, integrarea în proiecte mai ample sau ca resursă educațională pentru alți dezvoltatori interesați de tehnologiile VR.
+
+\section{Metodologie}
+
+Această secțiune prezintă metodologia utilizată pentru dezvoltarea aplicației de realitate virtuală „VR Museum”. Sunt detaliate alegerile tehnologice fundamentale, procesul de design și implementare, precum și abordarea privind testarea funcționalității și a experienței utilizatorului. 
+
+Proiectul „VR Museum” a fost dezvoltat utilizând motorul grafic \textbf{Unreal Engine 5.4.4}. Această platformă a fost selectată datorită capabilităților sale avansate în redarea grafică fotorealistă, simularea fizică precisă și suportului extensiv pentru dezvoltarea aplicațiilor de realitate virtuală, aspecte esențiale pentru crearea unei experiențe muzeale de tip "immersive". A fost utilizat un șablon (template) dedicat aplicațiilor VR, care a constituit punctul de plecare, fiind ulterior adaptat specificului proiectului. 
+
+Pentru a atinge un nivel ridicat de fidelitate vizuală și performanță, au fost integrate și configurate manual următoarele tehnologii cheie din Unreal Engine 5: 
+
+\begin{adjustwidth}{2em}{0pt}
+\begin{description}
+\item[\textbf{Lumen:}] sistemul de iluminare globală și reflexii dinamice a fost utilizat pentru a genera o ambianță luminoasă realistă și interactivă în cadrul spațiilor muzeale, atât interioare, cât și exterioare; 
+    
+\item[\textbf{Nanite: }] tehnologia de virtualizare a geometriei a permis randarea eficientă a modelelor 3D cu un grad înalt de detaliu (exponate, elemente arhitecturale), fără a compromite semnificativ performanța; 
+
+\item[\textbf{Nvidia DLSS: }] această tehnologie a fost implementată pentru a optimiza rata de cadre pe secundă (FPS), permițând rularea aplicației pe configurații hardware cu plăci video Nvidia diverse, menținând în același timp o calitate vizuală superioară. S-a urmărit astfel o scalabilitate a experienței în funcție de resursele hardware disponibile utilizatorului.
+\end{description}
+\end{adjustwidth}
+
+
+\noindent Dezvoltarea aplicației „VR Museum” a urmat un proces iterativ, structurat în următoarele etape principale:
+
+\noindent \textbf{Concepția și proiectarea arhitecturală}
+
+\begin{itemize}
+  \item Definirea structurii spațiale a muzeului, incluzând atât zonele interioare de expunere, cât și mediul exterior explorabil. S-a optat pentru o clădire de dimensiuni moderate pentru a optimiza încărcarea resurselor;
+  \item Stabilirea layout-ului general și a fluxului de navigare pentru utilizator.
+\end{itemize}
+
+\noindent \textbf{Modelarea și crearea mediului virtual}
+
+\begin{itemize}
+  \item Realizarea modelului 3D al clădirii muzeului;
+  \item Aplicarea texturilor pe suprafețele interioare și exterioare pentru a conferi realism și identitate vizuală;
+  \item Dezvoltarea peisajului exterior, care a inclus modelarea terenului, aplicarea texturilor specifice (sol, iarbă) și adăugarea de elemente de vegetație și decorative;
+  \item Integrarea resurselor grafice 3D (asset-uri), precum modele de exponate și elemente de decor, provenind din surse online cu licență de utilizare gratuită (ex. Fab Marketplace – Epic Games). Acestea au fost selectate pentru compatibilitatea cu Unreal Engine și relevanța pentru tematica muzeală.
+\end{itemize}
+
+\noindent \textbf{Implementarea detaliilor vizuale și funcționale}
+
+\begin{itemize}
+  \item Amplasarea și configurarea exponatelor în cadrul muzeului;
+  \item Configurarea fină a sistemelor Lumen și Nanite pentru a maximiza calitatea vizuală în raport cu performanța;
+  \item Includerea unor obiecte și elemente de scenă menite să valorifice capabilitățile avansate de randare (de ex., prin reflexii detaliate sau interacțiunea luminii cu materiale complexe, specific Ray Tracing-ului implicit sau explicit configurat).
+\end{itemize}
+
+Procesul de testare a aplicației „VR Museum” a fost realizat iterativ, pe parcursul întregului ciclu de dezvoltare, pentru a asigura funcționalitatea corespunzătoare și o experiență calitativă pentru utilizator. Aceste teste au fost efectuate utilizând un set de realitate virtuală Oculus Quest 2, conectat la un sistem PC prin multiple configurații:
+
+\begin{itemize}
+  \item Conexiune wireless, prin intermediul aplicației Virtual Desktop și al platformei SteamVR;
+  \item Conexiune prin cablu, utilizând Oculus Link și runtime-ul OculusXR.
+\end{itemize}
+
+\noindent Principalele aspecte urmărite în cadrul testării au fost:
+
+\begin{itemize}
+    \item Funcționalitatea de navigare, libertatea de mișcare, coliziunile cu mediul, fluența deplasării.
+    \item Calitatea vizuală, corectitudinea afișării texturilor, materialelor, iluminării și a modelelor 3D.
+    \item Performanța, menținerea unei rate de cadre constante și acceptabile pentru o experiență VR confortabilă, monitorizarea latenței.
+    \item Imersiunea și usabilitatea - evaluarea generală a experienței utilizatorului în mediul virtual.
+\end{itemize}
+
+
+\section{Structura lucrării}
+
+Lucrarea este structurată într-un mod logic și progresiv. La început, sunt prezentate fundamentele teoretice ale tehnologiilor utilizate, continuând apoi cu procesul de dezvoltare a experienței VR Museum.
+
+În primele capitole sunt abordate conceptele de bază legate de realitatea virtuală, detalii despre versiunea Unreal Engine folosită și opțiunile noi pe care aceasta le aduce față de versiunile anterioare. Sunt explicate tehnologiile Lumen, Nanite, Ray Tracing, Path Tracing și DLSS, fiecare având un rol esențial în obținerea unei experiențe vizuale realiste și memorabile.
+
+Ulterior, lucrarea descrie metodologia aplicată în dezvoltarea aplicației, evidențiind soluțiile propuse pentru interacțiune, navigare, implementarea motorului audio (sound engine), precum și setările și optimizările realizate pentru îmbunătățirea performanței aplicației.
+
+De asemenea, sunt menționate pe scurt și componentele predefinite din șablonul oferit de Unreal Engine, care includ funcții esențiale pentru o dezvoltare cât mai simplă și eficientă a funcționalităților specifice realității virtuale.
+
+Lucrarea conține și un capitol dedicat testării aplicației, atât din punct de vedere tehnic (hardware, performanță, recomandări de setări), cât și din perspectiva experienței utilizatorului. Aceasta este analizată atât de către dezvoltatorul aplicației, cât și de alte persoane care au avut ocazia să testeze muzeul virtual și să ofere feedback.
+
+În final, lucrarea se încheie cu o serie de concluzii personale legate de întregul proces de dezvoltare, lecțiile învățate, dificultățile întâmpinate și modul în care au fost soluționate. Sunt prezentate și direcțiile posibile de extindere a proiectului în viitor.
+
+Bibliografia reunește sursele de informare utilizate pe parcursul cercetării, incluzând documentații oficiale, resurse online și lucrări relevante pentru tematica abordată.
