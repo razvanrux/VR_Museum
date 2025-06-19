@@ -349,11 +349,336 @@ Prima cameră de expoziție este dedicată mamiferelor terestre. Aceasta conțin
     \caption{Camera 3}
 \end{figure}
 
+În zona exterioară a muzeului, sunt amplasate exponate de mari dimensiuni care nu puteau fi încadrate în sălile interioare: dinozauri de tip erbivor și carnivor, reconstituiți digital. Fiecare model este acompaniat de o placă informativă și animat în poziție naturală, pentru a reda dinamism. În apropiere se regăsește și o scenă de reproducere, unde este prezentat un cuib cu ouă, din care pot fi observați pui de dinozaur aflați în proces de eclozare – un detaliu menit să aducă un plus de viață și realism.
+
+Toate aceste expoziții au fost create, configurate și ajustate manual, utilizând asset-uri de înaltă calitate, modificate pentru a se potrivi specificului aplicației. S-a acordat o atenție deosebită compoziției scenice, proporțiilor, iluminării și detaliilor – pentru a oferi o experiență personalizată, realistă și educativă. Integrarea fiecărui element s-a făcut cu respectarea cerințelor de performanță în VR, păstrând un echilibru între fidelitatea vizuală și fluiditatea navigării.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/afara.png}
+        \label{fig:outside}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/afara2.png}
+        \label{fig:outside}
+    \end{subfigure}
+    \caption{Muzeul exterior}
+\end{figure}
+
+\newpage 
+
 \section{VR Pawn}
+
+Personajul controlat de utilizator în cadrul aplicației VR Museum poartă denumirea de VR Pawn, o componentă fundamentală în dezvoltarea oricărei aplicații compatibile cu realitatea virtuală în Unreal Engine. Spre deosebire de clasa standard de „Player Character” folosită în jocurile de tip First-Person sau Third-Person, unde controlul este limitat la mișcare și cameră, în cazul realității virtuale, interacțiunea se extinde la un nivel mult mai granular, incluzând urmărirea mâinilor, mișcarea independentă a acestora și detecția coliziunilor sau a gesturilor în spațiu.
+
+În contextul aplicației dezvoltate, VR Pawn are un rol central în structură, întrucât majoritatea funcționalităților sunt gestionate local, aplicația fiind una single-player și rulând direct pe sistemul utilizatorului. Astfel, VR Pawn devine nucleul logicii aplicației, acționând nu doar ca intermediar între utilizator și scenă, ci și ca element de legătură („bridge”) între multiple module funcționale.
+
+Printre componentele critice integrate în cadrul VR Pawn-ului se numără, printre altele, meniul principal al aplicației și sistemul de locomotion (deplasare), fiecare dintre acestea având o implementare complexă, ce va fi detaliată în secțiunile următoare.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol3/figuri/VR_Pawn.png} 
+\label{fig:VR_Pawn} 
+    \caption{VR Pawn}
+\end{figure}
 
 \section{Movement}
 
+În versiunea originală a șablonului Virtual Reality Template, este prezent un sistem de locomoție de bază, bazat pe teleportare. Această metodă este frecvent utilizată în aplicații VR datorită avantajelor legate de confortul utilizatorului, reducând riscul de motion sickness. Cu toate acestea, implementarea oferită în template-ul implicit este destul de rudimentară și prezintă mai multe limitări atât din punct de vedere tehnic, cât și vizual.
+
+Mai exact, sistemul de teleportare nu detectează întotdeauna corect suprafețele valide pentru deplasare. Ray-ul proiectat din controller intersectează uneori plane verticale sau obiecte neadecvate (precum margini de mesh-uri), iar zona de destinație poate deveni confuză pentru utilizator. În plus, efectele vizuale asociate teleportării sunt minime: indicatorul de plasare este static și lipsit de feedback clar, ceea ce diminuează experiența de utilizare și poate crea incertitudine privind punctul exact de sosire.
+
+Pentru a îmbunătăți calitatea și naturalețea deplasării în mediul virtual, se apelează la un sistem de locomoție continuă, atât pentru deplasarea liniară (smooth locomotion), cât și pentru rotație (smooth turn). Această metodă oferă un control mai precis și o experiență mai apropiată de explorarea din lumea reală, fiind mai potrivită pentru un tur virtual al unui muzeu.
+
+Noua metodă se bazează pe interpretarea semnalului analogic de la joystick-uri:
+\begin{itemize}
+\item Joystick-ul stâng controlează direcția de deplasare, permițând utilizatorului să meargă înainte, înapoi sau lateral, în funcție de orientarea sa;
+\item Joystick-ul drept controlează rotația continuă, cu o viteză definită în funcție de intensitatea devierii.
+\end{itemize}
+
+Pentru a implementa sistemul de locomoție continuă în cadrul experienței VR, au fost introduse două funcții noi mapate pe joystick-urile controlerelor, utilizând sistemul Enhanced Input Action din Unreal Engine 5. Aceste funcții sunt: SmoothMove si SmoothTurn
+
+\textbf{SmoothMove:}
+
+Funcționalitatea de deplasare continuă presupune mai multe componente care lucrează împreună, dintre care cele mai importante sunt: determinarea direcției de mișcare, detectarea suprafeței și redarea pașilor.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol3/figuri/SmoothMove.png} 
+\label{fig:VR_Pawn} 
+    \caption{Smooth Move}
+\end{figure}
+
+Pentru ca deplasarea să fie realistă și corect orientată, este necesară obținerea coordonatelor actorului (VRPawn) și a direcției sale de privire. Aceste informații sunt esențiale pentru a calcula vectorii de mișcare pe axele înainte și lateral (forward și right).
+
+Camera atașată Pawn-ului VR este utilizată pentru a extrage vectorii de orientare prin funcțiile GetForwardVector și GetRightVector. Acești vectori sunt ulterior înmulțiți cu valorile analogice provenite de la joystick (care indică direcția și intensitatea mișcării). Vectorul rezultat este transmis ca parametru către funcția AddMovementInput, care aplică mișcarea în sistemul de coordonate global (World Direction), asigurând o deplasare fluidă și direcționată corect.
+
+Surface Detection și efecte audio: Footsteps
+Pentru a spori realismul experienței, a fost integrat un sistem audio care redă sunete de pași diferiți în funcție de suprafața pe care se deplasează utilizatorul.
+
+Au fost selectate efecte sonore din biblioteca Epidemic Sound, grupate în două categorii principale:
+\begin{itemize}
+\item \textbf{ParquetCore} - care conține 22 de sunete de pași pe podea de lemn
+\item \textbf{GrassCore} - cuprinzând 15 sunete de pași pe suprafețe naturale, cum ar fi pământ și iarbă
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/step_grass.png}
+        \label{fig:VR_Pawn}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/step_wood.png}
+        \label{fig:VR_Pawn}
+    \end{subfigure}
+    \caption{Footsteps}
+\end{figure}
+
+Fiecare grup de sunete utilizează o funcție Random care selectează aleatoriu un clip audio din listă, asigurând astfel o variabilitate mare a sunetelor redate. Acest mecanism contribuie la o experiență audio mai realistă și mai imersivă, reducând efectul de repetiție și artificialitate.
+
+Pentru redarea corectă a sunetelor de pași, este necesară diferențierea între tipurile de suprafețe pe care actorul se deplasează. Această diferențiere se realizează pe baza materialelor asociate cu obiectele din cadrul mediului virtual.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol3/figuri/Smooth_Move_Complex.png} 
+\label{fig:VR_Pawn} 
+    \caption{Smooth Move complet, cu implementarea Phys pentru materiale}
+\end{figure}
+
+\textbf{Materiale}
+
+Un material în Unreal Engine poate fi configurat cu o gamă variată de parametri, printre care se numără și atributul „Phys Material”. Acest parametru permite asocierea unui tip specific de material fizic, ce poate fi ulterior identificat în runtime. În cazul aplicației curente, s-au utilizat două tipuri de materiale fizice: „Wood” pentru suprafețele interioare ale muzeului și „Grass” pentru zonele exterioare, unde mediul este natural. Această separare semantică permite sistemului să distingă rapid suprafața pe care se află utilizatorul și să redea sunetul corespunzător.
+
+Pentru a determina materialul pe care se află actorul în orice moment, s-a implementat un sistem de detecție automată a suprafeței. Acesta funcționează pe baza unei raze virtuale (line trace) care este lansată vertical, de sub actor în jos. Mai exact, se folosește funcția LineTraceByChannel, care primește ca parametru poziția actuală a actorului (prin GetActorLocation) pentru a stabili punctul de pornire al razei. Capătul razei este setat la o distanță de 100 de unități sub actor, asigurând astfel detecția obiectului imediat aflat sub picioare.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/phys.png}
+        \label{fig:Materials}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/phys_apply.png}
+        \label{fig:Materials}
+    \end{subfigure}
+    \caption{Aplicatea Phys la fiecare material folosit}
+\end{figure}
+
+Această rază de detecție poate fi observată în modul de debugging vizual, dar nu va fi vizibilă în experiența finală pentru utilizator. După lansarea razei, se folosește funcția BreakHitResult pentru a analiza rezultatul coliziunii. Dacă un obiect este detectat, se verifică materialul fizic asociat acestuia, iar în funcție de rezultat se setează o variabilă booleană numită IsOnWood. Aceasta va avea valoarea TRUE dacă suprafața detectată este de tip „Wood” sau FALSE în orice alt caz. În acest mod, putem controla ce tip de sunet va fi redat la fiecare pas, în funcție de contextul în care se află utilizatorul.
+
+Pentru gestionarea redării sunetelor, în momentul în care joystick-ul este înclinat și actorul începe să se deplaseze, este pornit un cronometru intern utilizând funcția SetTimerByEvent. 
+
+Acest cronometru determină intervalul la care vor fi redate sunetele de pași. În funcție de starea variabilei IsOnWood, sistemul va selecta un sunet din setul GrassCore (pentru exterior) sau ParquetCore (pentru interior). Fiecare sunet este selectat aleatoriu dintr-un set de înregistrări, oferind varietate auditivă și realism acustic.
+
+Când joystick-ul nu mai este înclinat (utilizatorul nu mai înaintează), cronometrul este oprit și resetat cu ajutorul funcției ClearAndInvalidateTimerByHandle, prevenind astfel redarea nejustificată a sunetelor între secvențele de deplasare. Acest mecanism contribuie la o experiență sonoră coerentă, adaptată contextului și comportamentului utilizatorului în mediul virtual.
+
+\textbf{SmoothTurn}
+
+Pentru rotația actorului într-un mod fluid și natural, s-a implementat o funcție simplificată, denumită SmoothTurn. Atunci când joystick-ul de pe maneta dreaptă este înclinat spre stânga sau dreapta, este declanșată o actualizare incrementală a orientării actorului. Aceasta se realizează prin funcția AddActorWorldRotation, care modifică rotația actorului pe axa verticală (Yaw) în pași mici și constanți, proporțional cu intensitatea semnalului joystick-ului.
+
+Deși rotația poate fi realizată și fizic de către utilizator prin întoarcerea corpului, această funcționalitate a fost păstrată pentru situațiile în care spațiul fizic disponibil este restricționat (de exemplu, în cazul utilizatorilor care stau pe loc sau folosesc un sistem de tip standing VR).
+
+În cadrul noului sistem de locomoție continuă, direcția de deplasare înainte este influențată direct de orientarea actorului, mai precis de direcția de privire a utilizatorului. Acest aspect este esențial pentru o experiență VR naturală: atunci când utilizatorul își rotește capul, iar comanda joystick-ului rămâne aceeași (spre exemplu, mișcare înainte), deplasarea se va produce în noua direcție a privirii, nu într-o direcție absolută față de scenă. Astfel, mișcarea este întotdeauna contextuală și raportată la orientarea corporală, ceea ce contribuie la o navigare intuitivă în mediul virtual.
+
+Pentru obținerea unui rezultat cât mai confortabil și realist, au fost efectuate numeroase teste de reglaj fin asupra parametrilor ce determină viteza de deplasare și viteza de rotație. Valorile finale au fost alese astfel încât să ofere o experiență fluentă, dar și să prevină apariția simptomelor de disconfort, precum motion sickness sau cybersickness.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol3/figuri/SmoothTurn.png} 
+\label{fig:Smooth_Turn} 
+    \caption{Smooth Turn}
+\end{figure}
+
+\textbf{SmoothTurn}
+
+Un aspect important al designului locomotiei VR este legat de rotația artificială. Deoarece mișcările bruște de rotație pot provoca stări de rău utilizatorilor sensibili, viteza de rotație a fost redusă semnificativ, pentru a permite o adaptare mai blândă a sistemului vizual. Totodată, rotația nu este obligatorie, deoarece utilizatorul se poate întoarce natural în realitate, folosind mișcarea fizică a corpului (în funcție de gradul de libertate oferit de spațiul disponibil în locație). Prin urmare, rotația continuă este oferită ca o opțiune complementară, nu ca un mecanism principal.
+
+Această abordare echilibrată între realism și confort a fost esențială în contextul proiectului VR Museum, unde explorarea spațiului este un element cheie care trebuie să se desfășoare într-un mod accesibil pentru toate categoriile de utilizatori.
+
+
 \section{Meniul principal și cel de setări}
+
+Meniul de setări din cadrul aplicației VR Museum permite utilizatorului să ajusteze parametrii grafici în funcție de configurația sistemului utilizat, precum și alte opțiuni relevante pentru performanță și confort în realitate virtuală.
+Utilizatorul poate selecta unul dintre profilurile grafice prestabilite: Low, Medium, High, Ultra și Cinematic. Deși Unreal Engine permite configurarea detaliată a fiecărui parametru individual, în cadrul aplicației a fost implementată o soluție unificată. Astfel, la alegerea unui profil, toate setările grafice sunt aplicate automat într-o configurație specifică acelui nivel.
+
+Parametrii influențați includ:
+
+\begin{itemize}
+\item \textbf{View Distance} - controlează distanța până la care obiectele păstrează modelul 3D complet, înainte de a fi simplificate prin tehnici LOD (Level of Detail).
+\item \textbf{Anti-Aliasing} - netezește marginile obiectelor pentru a elimina efectele de tip „jagged edges”.
+\item \textbf{Post Processing} - gestionează efectele vizuale aplicate în faza finală de randare, precum:
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ Tehnică & Explicație \\ [0.5ex] 
+ \hline\hline
+ Ambient Occlusion & calculează umbrirea indirectă între obiecte \\ 
+ \hline
+ Depth of Field & estompează elementele aflate în afara planului de focus \\
+ \hline
+ Motion Blur & adaugă estompare obiectelor aflate în mișcare rapidă \\
+ \hline
+ High Intensity Color & crește saturația imaginii, oferind un efect stilizat  \\ [1ex] 
+ \hline
+ Chromatic Aberration & simulează aberația cromatică de pe lentile  \\ [1ex] 
+ \hline
+ Grain & adaugă zgomot vizual pentru un efect cinematic  \\ [1ex] 
+ \hline
+ Vignette & întunecă subtil marginile cadrului  \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+\item \textbf{Shadows} - influențează calitatea și claritatea umbrelor din scenă.
+\item \textbf{Global Illumination} - simulează iluminarea indirectă, similar cu Ray Tracing, dar cu un cost computațional mai redus.
+\item \textbf{Reflections} - utilizează Lumen, Ray Tracing sau Screen Space Reflections pentru simularea reflexiilor realiste.
+\item \textbf{Textures} - reglează rezoluția texturilor aplicate obiectelor, influențând claritatea vizuală și utilizarea memoriei video.
+\item \textbf{Effects} - ajustează complexitatea efectelor speciale (particule, volumetrie, transparențe), cu un impact limitat în cadrul aplicației.
+\item \textbf{Foliage} - controlează nivelul de detaliu al vegetației, inclusiv comportamentul dinamic în condiții de mediu (vânt, apă).
+
+\end{itemize}
+
+Crearea meniului a implicat mai multe etape: design vizual adaptat pentru VR, scalare în funcție de câmpul vizual și implementarea logicii funcționale. Meniul este apelat printr-un buton de pe controlerele VR și apare în fața utilizatorului, în funcție de direcția privirii la momentul activării. Dacă meniul este deja afișat, o nouă apăsare îl închide, iar o altă activare îl reafișează într-o nouă poziție, actualizată.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/main_menu_1.png}
+        \label{fig:Menu}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/menu4.png}
+        \label{fig:Menu}
+    \end{subfigure}
+    \caption{Meniul principal - etape din procesul de dezvoltare}
+\end{figure}
+
+Cât timp meniul este vizibil, din fiecare mână virtuală se proiectează o linie de ghidare, care permite o selecție ușoară a opțiunilor. Interacțiunea cu butoanele se realizează printr-un sistem de tip OnClick, similar clicurilor de mouse, funcțional atât în UI 2D, cât și în VR.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/Main_show.png} 
+\label{fig:Menu} 
+    \caption{Codul responsabil pentru afișarea meniului (prezent in VR Pawn Blueprint)}
+\end{figure}
+\newpage
+Structura meniului principal include următoarele opțiuni:
+\begin{itemize}
+    \item \textbf{Resume} - închide meniul și permite revenirea în experiența VR;
+    \item \textbf{Settings} - închide meniul principal și încarcă meniul de setări;
+    \item \textbf{Exit Game} - închide aplicația fără salvarea progresului sau a poziției utilizatorului.
+\end{itemize}
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/Main_menu_graph.png} 
+\label{fig:Menu} 
+    \caption{Sectiune din cod ce asigură funcționalitatea butoanelor în meniu}
+\end{figure}
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/ClickSim.png} 
+\label{fig:Menu}  
+    \caption{Simularea click-ului la apăsarea trigger-ului pe manetele consolei VR}
+\end{figure}
+
+Meniul de setări poate fi accesat doar din meniul principal. Acesta include:
+\begin{itemize}
+    \item \textbf{Graphics} - permite selectarea nivelului general de detaliu vizual;
+    \item \textbf{FPS} - stabilește limita de cadre pe secundă;
+    \item \textbf{DLSS} - activează sau dezactivează tehnologia de upscaling DLSS;
+    \item \textbf{DLSS Settings} - oferă opțiuni suplimentare de configurare a DLSS (Quality, Balanced, Performance).
+\end{itemize}
+
+
+În partea inferioară a meniului sunt plasate două butoane suplimentare:
+\begin{itemize}
+\item \textbf{Exit} - închide meniul de setări și readuce în scenă meniul principal;
+\item \textbf{Apply} - aplică setările selectate, apelând funcțiile specifice fiecărui parametru.
+\end{itemize}
+
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/settings2.png}
+        \label{fig:Menu}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth, height=6cm]{continut/capitol3/figuri/settings3.png}
+        \label{fig:Menu}
+    \end{subfigure}
+    \caption{Meniul de setări - etape din procesul de dezvoltare}
+\end{figure}
+
+Selectarea opțiunilor se face prin apăsarea butoanelor dedicate. Butonul selectat este evidențiat vizual printr-o schimbare de culoare, iar sistemul permite activarea unui singur buton pe fiecare linie. Această restricție este gestionată de o logică internă, implementată pentru a preveni conflictele și a menține consistența interfeței.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/Settings_graph.png} 
+\label{fig:Menu}  
+    \caption{Asigurarea apăsării unui singur buton pe linie, cât si aplicarea funcțiilor de schimbare de grafici}
+\end{figure}
+
+Este important ca utilizatorii să evite modificarea agresivă a setărilor grafice atunci când aplicația rulează pe sisteme cu resurse limitate, pentru a preveni blocaje sau întreruperi de tip crash.
+
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/Graphics.png} 
+\label{fig:Menu}  
+    \caption{Schimbarea setărilor grafice se face manual, prin comenzi rulate local, pentru fiecare din opțiunile menționate anterior.}
+\end{figure} 
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/FPS.png} 
+\label{fig:Menu}  
+    \caption{Setarea numărului de cadre secunde se realizează prin executarea comenzii t.maxfps [x], unde x este numărul dorit}
+\end{figure}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/NvidiaPlugin.png} 
+\label{fig:Menu}  
+    \caption{Folosirea extensiilor realizare de Nvidia pentru tehnici avansate de upscaling}
+\end{figure}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/DLSS.png} 
+\label{fig:Menu}  
+    \caption{Cu ajutorul plugin-urilor furnizate de Nvidia, comenzile precum r.NGX.DLSS.Enable devin accesibile}
+\end{figure}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/DLSS_Quality.png} 
+\label{fig:Menu}  
+    \caption{Reglarea rezoluției interne pentru aplicarea unei opțiuni de upscaling}
+\end{figure}
+\newpage
+
+
+
 
 \section{Cerințele utilizatorului final}
 
