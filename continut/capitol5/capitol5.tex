@@ -1,26 +1,22 @@
 \chapter{Concluzii}
 \label{cap:cap5}
 
-Concluziile lucrării (1–2 pagini) în care se regăsesc cele mai importante concluzii din lucrare, care pornind de la obiectivele propuse în introducerea lucrării vor conține opinia personală a autorului privind rezultatele obținute în lucrare, o comparație a acestora cu alte proiecte/produse similare precum și posibile direcții de dezvoltare. 
+Lucrarea de față a avut ca scop dezvoltarea unei aplicații în realitate virtuală care să simuleze experiența vizitării unui muzeu de științe naturale. Obiectivul a fost crearea unui spațiu virtual accesibil și atractiv, care să aducă cultura mai aproape de utilizatori printr-un mediu tehnologic modern. Ideea de a avea „cultura la un click distanță” s-a transformat într-un demers concret, orientat atât către educație, cât și către accesibilitate, într-o formă non-comercială și deschisă dezvoltării ulterioare.
 
-\begin{itemize}
-    \item Gradul în care s-a realizat tema propusă (motivarea eventualelor obiective modificate);
-    \item Evidențierea concisă a contribuțiilor/soluțiilor personale (dacă este cazul);
-    \item Comparație cu alte proiecte similare;
-    \item Posibile direcții de dezvoltare.
-\end{itemize}
+Proiectul a fost realizat în proporție de aproximativ 95\%, iar majoritatea obiectivelor propuse au fost atinse. Platforma este complet funcțională, oferind o experiență vizuală de calitate, o navigare fluidă și o interfață intuitivă. Deși anumite componente nu au fost finalizate integral – precum unele coliziuni în zona exteriorului muzeului sau micile probleme legate de iluminarea din anumite unghiuri – aceste detalii nu afectează semnificativ funcționalitatea aplicației. Totodată, este important de menționat că proiectul a fost livrat într-o variantă de tip debug, nu shipping, ceea ce implică absența unor optimizări suplimentare și a eliminării liniilor de depanare vizuale.
 
-În acest capitol nu se introduc figuri, table sau listing-uri de cod. Pot fi în schimb referite!
+\section{Puncte forte ale proiectului}
+Printre punctele forte ale aplicației se remarcă nivelul ridicat de calitate grafică, atmosfera ambientală bine construită și stabilitatea generală a aplicației. Sistemul de mișcare în VR a fost gândit astfel încât utilizatorii să nu simtă disconfort, iar meniul principal, alături de meniul de setări, au fost dezvoltate cu accent pe claritate și eficiență. Structura internă a proiectului este bine organizată, cu comentarii relevante pentru o mare parte a funcțiilor implementate, ceea ce facilitează modificările și extinderile ulterioare. În plus, aplicația este oferită în regim open-source, cu toate componentele proprii disponibile publicului, respectând în același timp licențele asset-urilor comerciale incluse.
 
-Concluziile finale au un rol semnificativ în cadrul lucrării de diplomă, care trebuie pus în evidență în special în momentul susținerii acesteia în fața comisiei. Aici trebuie prezentate, în câteva pagini, cele mai importante rezultate ale muncii depuse de candidat și potențiale direcții de dezvoltare ulterioară a temei abordate. Acest capitol oferă o sinteză a realizărilor obținute, precum și avantajele și neajunsurile soluțiilor alese. Concluziile nu trebuie să aducă rezultate sau interpretări noi, ci doar să le evidențieze pe cele din conținutul lucrării.
+\section{Dificultăți întâmpinate și soluții aplicate}
+Procesul de dezvoltare nu a fost lipsit de provocări. Pe parcurs au apărut diverse dificultăți tehnice, inclusiv blocaje și instabilități în momentul setării graficii la niveluri foarte ridicate. De asemenea, proiectul a întâmpinat dificultăți în faza de împachetare (packaging), apărând erori neașteptate legate de încărcarea texturilor. Un moment critic a fost pierderea accidentală a unei părți considerabile din proiect, în urma unei operațiuni greșite de curățare a asset-urilor. Din fericire, existența mai multor copii de rezervă a permis restaurarea completă a progresului. O altă problemă importantă a fost legată de integrarea DLSS Frame Generation, care a generat erori pe plăci video ce nu suportau această funcționalitate. După investigații și testări repetate, această funcție a fost dezactivată în mod controlat, stabilizând astfel aplicația.
 
-\section{Direcții viitoare de dezvoltare}
-\label{cap:cap5:directii-viitoare}
+Un aspect tehnic semnificativ este faptul că aplicația nu poate fi rulată pe plăci grafice care nu suportă Ray Tracing sau DLSS, deoarece lipsa unui fallback pentru aceste funcții determină erori de tip null pointer în momentul inițializării. Deși Unreal Engine oferă un sistem de protecție pentru astfel de cazuri, acesta nu a fost implementat în proiectul actual, întrucât s-a mizat pe suportul hardware modern din partea utilizatorilor.
 
-\textcolor{gray}{\lipsum[1-3]}
+\section{Lecții învățate în timpul dezvoltării}
+Pe parcursul dezvoltării, autorul a acumulat o serie importantă de cunoștințe și abilități. În ciuda unei experiențe anterioare limitate în Unreal Engine, procesul de lucru în UE5 a condus la o înțelegere solidă a modului în care funcționează un proiect VR complex. De la gestionarea Blueprint, până la setările de randare avansate și compilarea prin Visual Studio, fiecare etapă a presupus un efort de documentare, testare și adaptare. S-a remarcat și importanța aspectului vizual în procesul de dezvoltare, întrucât designul grafic și alegerea texturilor și a luminii au ocupat o parte considerabilă din timp. De asemenea, performanțele obținute în urma testelor au scos în evidență necesitatea unor configurații hardware avansate pentru a oferi o experiență fluentă, ceea ce a dus la învățarea unor tehnici suplimentare de optimizare.
 
-\section{Lecții învățate pe parcursul dezvoltării proiectului de diplomă}
+\section{Direcții de dezvoltare viitoare}
+Privind către viitor, proiectul VR Museum oferă o bază solidă pentru extindere. Printre direcțiile posibile se numără suportul pentru alte tehnologii de upscaling (precum Intel XeSS sau AMD FidelityFX), extinderea muzeului cu noi camere și exponate, adăugarea unui sistem de voice-over sau chiar adaptarea aplicației pentru replicarea fidelă a unui muzeu real. Totodată, implementarea unui sistem de salvare a progresului sau a unor elemente interactive avansate ar aduce un plus semnificativ experienței. Nu în ultimul rând, o eventuală adaptare multiplatformă, care să permită rularea pe dispozitive standalone precum Meta Quest, ar spori considerabil accesibilitatea proiectului.
 
-Ar fi interesant dacă acest capitol s-ar încheia cu o astfel de secțiune, în mod special la licență.
-
-\textcolor{gray}{\lipsum[2-4]}
+În concluzie, VR Museum este un exemplu de proiect tehnic cu puternice valențe educaționale și culturale, care demonstrează atât potențialul realității virtuale în domeniul public, cât și capacitatea individuală de a integra tehnologii de ultimă generație într-un produs coerent, funcțional și extensibil. Chiar dacă există aspecte care pot fi îmbunătățite, rezultatul obținut până în acest punct este unul solid, cu o bază clară pentru evoluție.

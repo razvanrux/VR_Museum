@@ -1,58 +1,350 @@
 \chapter{Testarea aplicației și rezultate experimentale}
 \label{cap:cap4}
 
-(aproximativ 7 pagini)
+În acest capitol vor fi explolrate metodele de testare, scopul acesteia și rezultatele obținute pe parcursul realizării experienței.
+
+\section{Scopul testării}
+Testarea aplicației VR Museum are un rol esențial în validarea calității produsului final, demonstrând că acesta corespunde cerințelor funcționale, tehnice și de utilizare în mediul real. În contextul în care realitatea virtuală presupune o interacțiune complexă între componente hardware și software, este necesară o verificare riguroasă nu doar a comportamentului aplicației, ci și a modului în care aceasta se adaptează la configurații diferite, scenarii de utilizare diverse și platforme hardware variate.
+
+Obiectivul principal al testării este acela de a verifica stabilitatea și performanța aplicației în diferite condiții de utilizare, dar și de a identifica eventuale puncte slabe, limitări tehnologice sau incompatibilități. În special, s-a urmărit modul în care aplicația reacționează la variația specificațiilor hardware (GPU, CPU, RAM, VRAM), metode diferite de conectare între dispozitivul Meta Quest 2 și platforma de rulare (PC/laptop), rularea aplicației atât în mediu de dezvoltare (Unreal Engine) cât și în versiunea optimizată (build), schimbarea în timp real a setărilor grafice din meniul de opțiuni, utilizarea sau dezactivarea tehnologiilor grafice precum DLSS, la diverse niveluri de calitate și limitările de compatibilitate în absența hardware-ului compatibil cu Ray Tracing (plăci non-RTX)
+
+Într-un sens mai larg, testarea a avut și scopul de a evalua experiența utilizatorului într-un cadru VR: cât de naturală este mișcarea, cât de intuitivă este interfața, dacă apar stări de disconfort (ex. motion sickness), și în ce măsură aplicația poate fi folosită continuu fără întreruperi.
+
+\section{Metode de rulare și configurații hardware testate}
+Aplicația VR Museum a fost testată în două moduri fundamentale, fiecare cu implicații tehnice și performanțiale distincte:
+
+\subsection{Modul final (compilat - packaged build)}
+
+Acesta este modul destinat utilizatorilor finali, care nu necesită Unreal Engine pentru rulare. Utilizatorul trebuie doar să acceseze folderul aplicației și să ruleze fișierul LicenseVR.exe. La prima lansare, aplicația poate necesita între 15 și 35 de secunde pentru a compila local shader-ele și a încărca texturile, după care experiența devine fluidă și responsivă. Avantajul major este izolarea completă față de mediul de dezvoltare, ceea ce înseamnă o utilizare a resurselor minimă, o performanță optimizată și o stabilitate crescută.
+
+La fiecare pornire, aplicația inițializează un profil grafic minim, pentru a asigura compatibilitate maximă. Utilizatorul poate modifica ulterior setările grafice în funcție de configurația proprie, iar modificările sunt reținute între sesiuni, fiind salvate local.
+
+\subsection{Modul dezvoltator (editor Unreal Engine)}
+
+Acest mod este destinat exclusiv celor care doresc să analizeze sau să modifice aplicația. Lansarea din Unreal Engine implică folosirea de resurse suplimentare (debugging, recompilări temporare, monitorizare în timp real), ceea ce determină o scădere semnificativă a performanței. De asemenea, prezența editorului deschis limitează resursele disponibile pentru execuție, iar în cazul rulării la niveluri „High” sau „Cinematic”, se pot înregistra blocări temporare (freeze) sau chiar crash complet.
+
+În special, la utilizarea pluginului OpenXR (necesar pentru suportul VR în Unreal Engine), compilarea proiectului necesită integrarea cu Visual Studio. Acest pas permite controlul extensiv al aplicației, dar introduce o dependență critică de arhitectura hardware. De exemplu, în lipsa unei plăci video compatibile cu Ray Tracing (serie RTX 20 sau mai nou), apelurile către funcții grafice vor eșua, generând pointeri nuli și erori critice în fișierele sursă. Astfel, aplicația nu poate rula pe plăci grafice de generație mai veche (GTX sau integrat), fiind condiționată de existența nucleelor RT pe GPU.
+
+\section{Metode de conectare VR utilizate}
+Fiind concepută exclusiv pentru rulare pe headset-ul Meta Quest 2, aplicația necesită conectarea acestuia la un PC sau laptop capabil să ruleze Unreal Engine și să gestioneze cerințele grafice impuse de proiect. În testare au fost luate în calcul trei metode distincte de conectare între Meta Quest 2 și sistemul de rulare:
+
+\subsection{Oculus Link (prin cablu USB-C)}
+
+Această metodă oficială presupune conectarea dispozitivului prin cablu direct la PC, folosind aplicația Meta/Oculus. Este considerată cea mai stabilă soluție din punct de vedere hardware, însă în practică pot apărea artefacte vizuale (flickering), latență crescută și glitch-uri, în special pe porturi USB cu lățime de bandă limitată sau pe sisteme cu procesor grafic integrat.
+
+\subsection{Oculus Air Link (wireless)}
+
+Această variantă permite conectarea fără fir, prin rețeaua Wi-Fi locală, oferind un grad de libertate mai mare. Totuși, testele au arătat că transmisia suferă de sacadări frecvente, pierderi temporare de pachete și latență variabilă. Este o soluție convenabilă pentru testări rapide, dar insuficient de fiabilă pentru sesiuni lungi.
+
+\subsection{Virtual Desktop + SteamVR (wireless optimizat)}
+
+Soluția testată și recomandată este utilizarea aplicației Virtual Desktop, disponibilă contra cost în Meta Quest Store. Aceasta oferă o integrare eficientă cu SteamVR, permițând redarea wireless a experienței cu o latență redusă și un nivel de personalizare ridicat. Aplicația permite reglarea manuală a rezoluției, bitrate-ului și a altor parametri relevanți pentru experiența VR, ceea ce o face cea mai performantă și stabilă opțiune în timpul testărilor.
+
+În toate cazurile, runtime-ul OpenXR a fost utilizat pentru integrarea nativă a controlerelor și a poziționării în spațiu.
+
+
+\section{Metodologia de testare}
+Pentru testarea performanței aplicației VR Museum, s-a optat pentru metoda de conectare wireless prin Virtual Desktop, utilizând SteamVR drept intermediar și OpenXR ca runtime activ. Această configurație a permis rularea în cele mai bune condiții posibile, cu latență redusă și stabilitate ridicată, asigurând obținerea unor rezultate relevante pentru testele de performanță.
+
+Metoda de testare a fost una directă, dar eficientă și reproductibilă. După lansarea aplicației compilate, s-a accesat consola Unreal Engine prin apăsarea tastei sau ~ (plasată sub tasta Esc pe tastatură), unde s-a introdus comanda "stat fps". Această comandă activează afișarea în timp real a numărului de cadre pe secundă (FPS), ceea ce permite monitorizarea performanței în funcție de setările grafice.
+
+A fost parcurs întregul spectru de opțiuni grafice disponibile în aplicație, de la Low la Cinematic, în paralel cu toate profilurile DLSS: Ultra Performance, Performance, Balanced, Quality, Native Upscale (DLSS activ, dar setat să scaleze rezoluția la 100\%).
+
+Pentru referință, a fost testat și scenariul DLSS dezactivat, în care redarea este efectuată la rezoluția internă completă (100\% screen percentage), fără procesare suplimentară.
+
+Este important de menționat că în Unreal Engine, opțiunile DLSS pot fi vizual setate chiar dacă tehnologia este dezactivată; de exemplu, DLSS setat pe “Performance” dar cu DLSS off activează doar o reducere de rezoluție internă la 50\%, fără a efectua upscaling cu algoritmul NVIDIA, ceea ce afectează semnificativ calitatea vizuală și consumul de resurse.
+
+Pentru acuratețea testelor, aplicația a fost lăsată să ruleze 10–20 de secunde după fiecare modificare de setare, timp în care se realizează încărcarea completă a shaderelor, texturilor și obiectelor din scenă. Apoi, s-au colectat valorile FPS și cantitatea de memorie video (VRAM) utilizată, toate în camera de start, unde aplicația își inițiază sesiunea.
+
+În toate scenariile, procesorul a fost utilizat aproape de capacitate maximă în primele secunde după lansarea aplicației sau modificarea profilului grafic, datorită procesului intensiv de compilare a shaderelor – o etapă specifică motorului Unreal Engine, care implică un consum crescut, indiferent de numărul de nuclee.
+
+\subsection{Configurațiile hardware utilizate}
+
+Testele au fost efectuate pe patru sisteme diferite: trei laptopuri de tip „gaming” și un desktop performant. Configurațiile sunt prezentate mai jos:
 
 \begin{itemize}
-    \item Punerea în funcțiune/lansarea aplicației,elemente de configurare sau instalare;
-    \item Testarea sistemului (hardware/software);
-    \item Aspecte legate de încărcarea procesorului, memoriei, limitări în ce privește transmisia datelor/comunicarea;
-    \item Se prezintă datele de test/metrici/benchmarks
-    \item Aspecte legate de fiabilitate/securitate/scalabilitate;
-    \item Rezultate experimentale (grafice, tabele, etc.);
-    \item Utilizarea sistemului. 
+  \item \textbf{Laptop 1 – Lenovo Legion}
+  \begin{itemize}
+    \item CPU: AMD Ryzen 7 (seria 7000)
+    \item GPU: NVIDIA RTX 4060 (Mobile), 8 GB VRAM
+    \item RAM: 16 GB DDR5 @ 4800 MHz
+  \end{itemize}
+  
+  \item \textbf{Laptop 2 – Lenovo Legion Y740}
+  \begin{itemize}
+    \item CPU: Intel Core i7-9750H
+    \item GPU: NVIDIA RTX 2060 (Mobile), 6 GB VRAM
+    \item RAM: 32 GB DDR4 @ 2666 MHz
+  \end{itemize}
+  
+  \item \textbf{Laptop 3 – Lenovo Legion 5 Pro}
+  \begin{itemize}
+    \item CPU: AMD Ryzen 7 5800H
+    \item GPU: NVIDIA RTX 3070 (Mobile), 8 GB VRAM
+    \item RAM: 32 GB DDR4 @ 3200 MHz
+  \end{itemize}
+  
+  \item \textbf{Desktop PC}
+  \begin{itemize}
+    \item CPU: AMD Ryzen 7 5800X3D
+    \item GPU: NVIDIA RTX 3070, 8 GB VRAM
+    \item RAM: 64 GB DDR4 @ 3200 MHz
+  \end{itemize}
 \end{itemize}
 
-\section{Nivel 1}
-\label{cap:cap4:nivel1}
+Pentru monitorizarea resurselor utilizate (procesor, GPU, VRAM), au fost utilizate două surse principale: Task Manager, pentru o vedere de ansamblu asupra utilizării CPU și GPU în timp real și Open Hardware Monitor, o aplicație gratuită care oferă informații detaliate despre temperaturi, frecvențe, utilizarea memoriei video și consumul energetic.
 
-\textcolor{gray}{\lipsum}  (Figura \ref{fig:clone_trooper})
+Un aspect relevant observat pe toate sistemele testate este faptul că aplicația nu a depășit 4 GB de RAM utilizați, indiferent de profilul grafic sau complexitatea scenei. Astfel, cerințele de memorie RAM se mențin rezonabile chiar și în condiții de testare avansată.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{continut/capitol4/figuri/clone_trooper.png}
-    \caption{Clone Trooper\protect\footnotemark}
-    \label{fig:clone_trooper}
-\end{figure}
-\footnotetext{imagine preluată de pe un site web care nu „merită” trecut la bibliografie \url{https://www.pngitem.com/}}
+\section{Rezultatele testării}
+Rezultatele testării performanței aplicației VR Museum sunt prezentate mai jos, pentru fiecare configurație hardware testată. Testele au fost realizate în camera de start a aplicației, după un timp de inițializare de aproximativ 20 de secunde, pentru a permite compilarea shaderelor și stabilizarea resurselor.
 
-Tabelul \ref{tabel:tab_simplu} prezintă un exemplu foarte simplu de tabel în \LaTeX. Un alt exemplu este prezentat în Tabelul \ref{tabel:2} din \ref{anexa3:func_xyz}.
+Pentru fiecare nivel grafic (Low, Medium, High, Ultra, Cinematic), s-au analizat performanțele obținute în funcție de modul DLSS utilizat: Ultra Performance, Performance, Balanced, Quality, Native Upscale și Native (DLSS dezactivat).
 
-\begin{table}[ht]
-    \centering
-    \caption{Exemplu de tabel simplu}
-    \label{tabel:tab_simplu}
-    \begin{tabular}{||c l c r||} 
-        \hline
-        \textbf{Col1} & \textbf{Col2} & \textbf{Col3} & \textbf{Col4} \\
-        \hline\hline
-        1 & 6 & 87837 & 787 \\ 
-        2 & 7 & 78 & 5415 \\
-        3 & 545 & 778 & 7507 \\
-        4 & 545 & 18744 & 7560 \\
-        5 & 88 & 788 & 6344 \\
-        \hline
-    \end{tabular}
+În fiecare caz a fost măsurat numărul de cadre pe secundă (FPS) și, acolo unde a fost posibil, cantitatea de memorie video (VRAM) utilizată. Tabelele de mai jos sintetizează aceste valori.
+\clearpage
+
+\subsection*{Rezultate testare – NVIDIA RTX 2060 (Mobile)}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\textbf{Grafică} & \textbf{DLSS} & \textbf{FPS} & \textbf{VRAM (MB)} & \textbf{Comentarii} \\
+\hline
+\multirow{6}{*}{\textbf{Low}} & Ultra Performance & 85 & 5434 & OK \\
+ & Performance       & 80 & 5619 & OK \\
+ & Balanced          & 76 & 5709 & OK \\
+ & Quality           & 71 & 5677 & Rulabil \\
+ & Native Upscale    & 56 & 5516 & Nerecomandat \\
+ & Native            & 45 & 5031 & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{Medium}} & Ultra Performance & 63 & 5541 & -- \\
+ & Performance       & 57 & 5648 & Nerecomandat \\
+ & Balanced          & 41 & 5676 & Nerecomandat \\
+ & Quality           & 38 & 5432 & Nerecomandat \\
+ & Native Upscale    & 25 & 5650 & Nerecomandat \\
+ & Native            & -- & --   & -- \\
+\hline
+\multirow{6}{*}{\textbf{High}} & Ultra Performance & 37 & 5606 & Nerecomandat \\
+ & Performance       & 30 & 5687 & Nerecomandat \\
+ & Balanced          & 24 & 5599 & Nerecomandat \\
+ & Quality           & 20 & 5284 & Nerecomandat \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\multirow{6}{*}{\textbf{Ultra}} & Ultra Performance & 23 & 5607 & Nerecomandat \\
+ & Performance       & 18 & 5638 & Nerecomandat \\
+ & Balanced          & -- & --   & -- \\
+ & Quality           & -- & --   & -- \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\multirow{6}{*}{\textbf{Cinematic}} & Ultra Performance & -- & -- & -- \\
+ & Performance       & -- & -- & -- \\
+ & Balanced          & -- & -- & -- \\
+ & Quality           & -- & -- & -- \\
+ & Native Upscale    & -- & -- & -- \\
+ & Native            & -- & -- & -- \\
+\hline
+\end{tabular}
 \end{table}
 
-\subsection{Nivel 2}
-\label{cap:cap4:nivel1:nivel2}
+Prima generație mobilă cu suport pentru Ray Tracing și DLSS. Performanțele scad semnificativ pe setări grafice ridicate, dar acest comportament este previzibil având în vedere arhitectura sa limitată.
 
-\subsubsection{Nivel 3}
-\label{cap:cap4:nivel1:nivel2:nivel3}
+\clearpage
 
-\textcolor{gray}{\lipsum}
+\subsection*{Rezultate testare – NVIDIA RTX 3070 (Mobile)}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Grafică} & \textbf{DLSS} & \textbf{FPS} & \textbf{VRAM (MB)} & \textbf{Comentarii} \\
+\hline
+\multirow{6}{*}{\textbf{Low}} & Ultra Performance & 72 & 6714 & OK \\
+ & Performance       & 70 & 6829 & OK \\
+ & Balanced          & 66 & 6981 & OK \\
+ & Quality           & 60 & 6922 & OK \\
+ & Native Upscale    & 50 & 6756 & Rulabil \\
+ & Native            & 38 & 6759 & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{Medium}} & Ultra Performance & 59 & 6794 & Rulabil \\
+ & Performance       & 54 & 6846 & Rulabil \\
+ & Balanced          & 50 & 6766 & Rulabil \\
+ & Quality           & 45 & 6831 & Rulabil \\
+ & Native Upscale    & 29 & 7230 & Nerecomandat \\
+ & Native            & 24 & 7492 & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{High}} & Ultra Performance & 48 & 7407 & Rulabil \\
+ & Performance       & 42 & 7563 & Rulabil \\
+ & Balanced          & 34 & 7191 & Nerecomandat \\
+ & Quality           & 33 & 7433 & Nerecomandat \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\multirow{6}{*}{\textbf{Ultra}} & Ultra Performance & 40 & 7221 & Rulabil \\
+ & Performance       & 31 & 7524 & Nerecomandat \\
+ & Balanced          & 27 & 7685 & Nerecomandat \\
+ & Quality           & -- & --   & -- \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\multirow{6}{*}{\textbf{Cinematic}} & Ultra Performance & 23 & 6720 & Nerecomandat \\
+ & Performance       & 14 & 6904 & Nerecomandat \\
+ & Balanced          & -- & --   & -- \\
+ & Quality           & -- & --   & -- \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\end{tabular}
+\end{table}
 
-\textcolor{gray}{\lipsum}
+Deși este versiunea mobilă, performanțele sunt apropiate de cele ale modelului desktop. Oferă o experiență VR fluidă în majoritatea scenariilor, dar cu limitări vizibile la nivel foarte detaliat.
+\clearpage
 
-\textcolor{gray}{\lipsum}
+\subsection*{Rezultate testare – NVIDIA RTX 3070 (Desktop)}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Grafică} & \textbf{DLSS} & \textbf{FPS} & \textbf{VRAM (MB)} & \textbf{Comentarii} \\
+\hline
+\multirow{6}{*}{\textbf{Low}} & Ultra Performance & 120 & 6735 & Perfect \\
+ & Performance       & 115 & 7002 & Perfect \\
+ & Balanced          & 110 & 7275 & Perfect \\
+ & Quality           & 103 & 7201 & Perfect \\
+ & Native Upscale    & 84  & 6757 & OK \\
+ & Native            & 70  & 6761 & OK \\
+\hline
+\multirow{6}{*}{\textbf{Medium}} & Ultra Performance & 96 & 6891 & Perfect \\
+ & Performance       & 87 & 7010 & Perfect \\
+ & Balanced          & 80 & 7115 & OK \\
+ & Quality           & 74 & 7058 & OK \\
+ & Native Upscale    & 52 & 7296 & Nerecomandat \\
+ & Native            & 44 & 7418 & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{High}} & Ultra Performance & 71 & 7471 & OK \\
+ & Performance       & 59 & 7606 & OK \\
+ & Balanced          & 45 & 7552 & Nerecomandat \\
+ & Quality           & 32 & 6832 & Nerecomandat \\
+ & Native Upscale    & 25 & 7480 & Nerecomandat \\
+ & Native            & 20 & 6772 & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{Ultra}} & Ultra Performance & 43 & 7512 & Nerecomandat \\
+ & Performance       & 35 & 7542 & Nerecomandat \\
+ & Balanced          & 30 & 7306 & Nerecomandat \\
+ & Quality           & 20 & 7339 & Nerecomandat \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\multirow{6}{*}{\textbf{Cinematic}} & Ultra Performance & 27 & 7326 & Nerecomandat \\
+ & Performance       & 16 & 7545 & Nerecomandat \\
+ & Balanced          & -- & --   & -- \\
+ & Quality           & -- & --   & -- \\
+ & Native Upscale    & -- & --   & -- \\
+ & Native            & -- & --   & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+DLSS-ul este implementat mai eficient, iar nucleele RT sunt mai numeroase și mai rapide față de varianta mobilă. Placa oferă o experiență VR excelentă, chiar și la setări grafice înalte.
+\clearpage
+
+\subsection*{Rezultate testare – NVIDIA RTX 4060 (Mobile)}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Grafică} & \textbf{DLSS} & \textbf{FPS} & \textbf{VRAM (MB)} & \textbf{Comentarii} \\
+\hline
+\multirow{6}{*}{\textbf{Low}} & Ultra Performance & 90 & -- & Perfect \\
+ & Performance       & 90 & -- & Perfect \\
+ & Balanced          & 87 & -- & Perfect \\
+ & Quality           & 80 & -- & Perfect \\
+ & Native Upscale    & 55 & -- & Nerecomandat \\
+ & Native            & 53 & -- & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{Medium}} & Ultra Performance & 78 & -- & OK \\
+ & Performance       & 69 & -- & OK \\
+ & Balanced          & 65 & -- & OK \\
+ & Quality           & 57 & -- & -- \\
+ & Native Upscale    & 39 & -- & Nerecomandat \\
+ & Native            & 32 & -- & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{High}} & Ultra Performance & 60 & -- & OK \\
+ & Performance       & 60 & -- & OK \\
+ & Balanced          & 45 & -- & Nerecomandat \\
+ & Quality           & 33 & -- & Nerecomandat \\
+ & Native Upscale    & 22 & -- & Nerecomandat \\
+ & Native            & 15 & -- & Nerecomandat \\
+\hline
+\multirow{6}{*}{\textbf{Ultra}} & Ultra Performance & 55 & -- & Nerecomandat \\
+ & Performance       & 43 & -- & Nerecomandat \\
+ & Balanced          & 38 & -- & Nerecomandat \\
+ & Quality           & 22 & -- & Nerecomandat \\
+ & Native Upscale    & 14 & -- & Nerecomandat \\
+ & Native            & -- & -- & -- \\
+\hline
+\multirow{6}{*}{\textbf{Cinematic}} & Ultra Performance & 35 & -- & Nerecomandat \\
+ & Performance       & 14 & -- & Nerecomandat \\
+ & Balanced          & 10 & -- & Nerecomandat \\
+ & Quality           & -- & -- & -- \\
+ & Native Upscale    & -- & -- & -- \\
+ & Native            & -- & -- & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+Diferențele față de RTX 2060 sunt minime la nivel „Low”, însă îmbunătățirile devin evidente la activarea Ray Tracing-ului și DLSS-ului, unde RTX 4060 oferă un plus clar de performanță și stabilitate.
+\clearpage
+
+\section{Răspunsurile utilizatorilor ce au testat experiența VR Museum}
+
+Pentru a evalua experiența utilizatorilor în cadrul aplicației VR Museum, a fost realizat un chestionar Google Forms compus din întrebări de tip scală și întrebări deschise. Acesta a fost transmis unui grup restrâns de persoane care au testat aplicația folosind dispozitive compatibile cu realitatea virtuală, în condiții controlate. Scopul a fost acela de a identifica atât nivelul de accesibilitate și confort, cât și posibilele dificultăți tehnice sau sugestii de îmbunătățire.
+
+\subsection{Navigarea în mediul virtual}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol4/figuri/quiz1.png} 
+\label{fig:VR_Pawn} 
+    \caption{Utilizatorii au evaluat cât de ușor le-a fost să navigheze prin muzeul virtual. Majoritatea au selectat opțiunile „Ușor” sau „Foarte ușor”, ceea ce sugerează că sistemul de control prin joystick a fost intuitiv și eficient. Doar o minoritate a raportat dificultăți.}
+\end{figure}
+\subsection{Utilizarea comenzilor și meniurilor}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol4/figuri/quiz2.png} 
+\label{fig:VR_Pawn} 
+    \caption{Răspunsurile indică faptul că interacțiunea cu interfața aplicației a fost bine înțeleasă. 80\% dintre respondenți au declarat că au înțeles „Complet” cum să folosească meniurile.}
+\end{figure}
+\clearpage
+\subsection{Nivelul de confort fizic}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol4/figuri/quiz3.png} 
+\label{fig:VR_Pawn} 
+    \caption{Majoritatea utilizatorilor au raportat un nivel de confort fizic ridicat („Confortabil” sau „Foarte confortabil”), fără semnale de oboseală vizuală sau disconfort în timpul mișcării. Acest rezultat validează alegerea sistemului locomotor și a setărilor implicite.}
+\end{figure}
+\subsection{Funcționalitatea aplicației}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=12cm]
+{continut/capitol4/figuri/quiz4.png} 
+\label{fig:VR_Pawn} 
+    \caption{Această întrebare a vizat funcționalitatea globală (sunet, interacțiune, informare). Răspunsurile sunt pozitive, fiecare utilizator alegând „Complet”.}
+\end{figure}
+\subsection{Analiza răspunsurilor deschise}
+
+Răspunsurile deschise din chestionar au adus o perspectivă valoroasă asupra experienței oferite de aplicație din punctul de vedere al utilizatorilor. În ceea ce privește eventualele probleme tehnice, majoritatea respondenților nu au raportat dificultăți majore în timpul utilizării. Singura observație punctuală a vizat sensibilitatea sistemului de rotire prin joystick, considerată ușor crescută de un utilizator. Totuși, acesta a subliniat că problema nu a fost una semnificativă, întrucât s-a putut orienta fizic în spațiu fără impedimente.
+
+Din punct de vedere al calității experienței oferite, răspunsurile au fost predominant pozitive. Utilizatorii au descris aplicația drept captivantă, realistă și surprinzătoare. Un respondent, biolog de profesie, a menționat în mod expres faptul că, deși obișnuiește să viziteze muzee de științe naturale, experiența unui muzeu virtual i-a oferit o perspectivă nouă și memorabilă. Libertatea de mișcare, senzația de prezență și detaliile vizuale au fost cele mai apreciate elemente. Au fost lăudate în mod special atât peisajul exterior cât și faptul că traseul expozițional a fost logic și ușor de parcurs.
+
+Sugestiile oferite de participanți vizează, în principal, extinderea conținutului și ajustarea anumitor aspecte de accesibilitate. Mai mulți respondenți au propus ca muzeul să fie mărit — atât în interior, cât și în exterior — și să conțină mai multe decoruri tematice. De asemenea, un utilizator a sugerat introducerea unei opțiuni de alegere directă a tipului de expoziție dorite, pentru o navigare mai eficientă în cazul unei diversități crescute. În ceea ce privește confortul locomotor, unul dintre răspunsuri a recomandat scăderea vitezei de deplasare pentru a reduce riscul apariției răului de mișcare (motion sickness).
+
+Feedback-ul calitativ susține ideea că aplicația a reușit să ofere o experiență atractivă și funcțională, în special în ceea ce privește imersiunea vizuală și libertatea de explorare. Observațiile primite deschid totodată direcții clare de îmbunătățire în versiuni viitoare, în special prin extinderea conținutului, rafinarea interfeței și personalizarea mai avansată a parcursului utilizatorului.
+

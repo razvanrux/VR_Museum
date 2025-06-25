@@ -194,11 +194,11 @@ Materialele nu sunt doar culori simple aplicate pe obiecte, ci sunt compuse din 
 \item \textbf{Ambient Occlusion (AO)} - opțională, dar foarte utilă pentru adăugarea de umbriri fine în colțuri, margini sau zone în care lumina ambientală ar fi parțial blocată. Aceasta adaugă profunzime și realism suplimentar scenei, mai ales în combinație cu iluminarea globală.
 \end{itemize}
 
-Aceste texturi pot fi fie importate din pachete externe, fie generate procedural în editor, și sunt combinate prin noduri logice în editorul de materiale din Unreal Engine. Rezultatul final este un material care poate fi aplicat oricărui obiect 3D din scenă, contribuind esențial la aspectul general al aplicației.
+Aceste texturi\cite{textures-com} pot fi fie importate din pachete externe, fie generate procedural în editor, și sunt combinate prin noduri logice în editorul de materiale din Unreal Engine. Rezultatul final este un material care poate fi aplicat oricărui obiect 3D din scenă, contribuind esențial la aspectul general al aplicației.
 
-În cadrul proiectului VR Museum, au fost create materiale personalizate atât pentru interiorul muzeului (parchet, pereți, vitrine), cât și pentru mediul exterior (pământ, piatră, vegetație). Fiecare material a fost adaptat pentru a reda o atmosferă coerentă și naturală, urmând principiile de bază ale physically based rendering (PBR).
+În cadrul proiectului VR Museum, au fost create materiale personalizate atât pentru interiorul muzeului (parchet, pereți, vitrine), cât și pentru mediul exterior (pământ, piatră, vegetație)\cite{poliigon}. Fiecare material a fost adaptat pentru a reda o atmosferă coerentă și naturală, urmând principiile de bază ale physically based rendering (PBR)\cite{ambientcg}.
 
-Pentru crearea terenului din cadrul scenei exterioare, a fost utilizat un asset specializat, numit Landscape Pro. Acesta este un material complex, multifuncțional, care combină în mod procedural mai multe tipuri de suprafețe - pământ, iarbă și rocă - într-un singur shader aplicabil pe sistemul de landscape din Unreal Engine. Avantajul major al acestui asset constă în faptul că, odată aplicat, materialul este capabil să detecteze automat înclinația și forma reliefului și să genereze în mod procedural prop-uri decorative: fire de iarbă, ramuri uscate, frunze căzute, flori, pietre și alte elemente naturale.
+Pentru crearea terenului din cadrul scenei exterioare, a fost utilizat un asset specializat, numit Landscape Pro\cite{fab-marketplace}. Acesta este un material complex, multifuncțional, care combină în mod procedural mai multe tipuri de suprafețe - pământ, iarbă și rocă - într-un singur shader aplicabil pe sistemul de landscape din Unreal Engine. Avantajul major al acestui asset constă în faptul că, odată aplicat, materialul este capabil să detecteze automat înclinația și forma reliefului și să genereze în mod procedural prop-uri decorative: fire de iarbă, ramuri uscate, frunze căzute, flori, pietre și alte elemente naturale.
 
 Această generare procedurală nu doar că accelerează procesul de construire a unei scene realiste, dar și adaugă un nivel ridicat de detaliu și varietate, greu de obținut manual. Astfel, utilizatorul are senzația că se află într-un mediu natural credibil, viu și dinamic. Fiecare zonă a terenului este compusă dintr-o combinație vizuală de textură de sol și obiecte tridimensionale ușor diferite, ceea ce previne repetitivitatea și accentuează realismul.
 
@@ -208,7 +208,7 @@ Această tranziție vizuală influențează semnificativ calitatea percepută a 
 
 \section{Realizarea asset-urilor}
 
-Asset-urile utilizate într-un proiect Unreal Engine pot proveni din surse variate, fie că sunt special concepute pentru motorul grafic realizat de Epic Games, fie că sunt universale și adaptate ulterior. Indiferent de proveniență, toate asset-urile 3D sunt compuse dintr-o rețea de poligoane - elemente geometrice esențiale care determină forma, complexitatea și nivelul de detaliu al obiectului. Cu cât un asset are mai multe poligoane, cu atât este mai detaliat, dar și mai costisitor din punct de vedere al performanței.
+Asset-urile utilizate într-un proiect Unreal Engine pot proveni din surse variate, fie că sunt special concepute pentru motorul grafic realizat de Epic Games, fie că sunt universale și adaptate ulterior. Indiferent de proveniență, toate asset-urile 3D\cite{sketchfab} sunt compuse dintr-o rețea de poligoane - elemente geometrice esențiale care determină forma, complexitatea și nivelul de detaliu al obiectului. Cu cât un asset are mai multe poligoane, cu atât este mai detaliat, dar și mai costisitor din punct de vedere al performanței.
 
 În situația ideală, asset-ul este creat special pentru Unreal Engine și vine deja optimizat, incluzând o structură internă denumită skeleton (schelet). Acest schelet permite animarea obiectului, permițând mișcarea și manipularea părților componente (cum ar fi membrele unui corp sau articulațiile unui robot). În combinație cu un set de animatii - realizate frame cu frame sau generate procedural - acest sistem oferă o bază solidă pentru personaje sau obiecte dinamice care pot reacționa la acțiunile utilizatorului sau la mediul înconjurător.
 
@@ -676,8 +676,27 @@ Este important ca utilizatorii să evite modificarea agresivă a setărilor graf
     \caption{Reglarea rezoluției interne pentru aplicarea unei opțiuni de upscaling}
 \end{figure}
 \newpage
-
-
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/SettingCurrent.png} 
+\label{fig:Menu}  
+    \caption{Funcția ce extrage setările curente și selectează butoanele de setări}
+\end{figure}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/DLSSSet.png} 
+\label{fig:Menu}  
+    \caption{Funcția ce extrage setările curente pentru DLSS pornit / oprit}
+\end{figure}
+\begin{figure} [htp] 
+\centering 
+\includegraphics [width=14cm]
+{continut/capitol3/figuri/DLSSExtract.png} 
+\label{fig:Menu}  
+    \caption{Funcția setează butonul de On / Off pentru DLSS}
+\end{figure}
 
 
 \section{Cerințele utilizatorului final}
