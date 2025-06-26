@@ -1,6 +1,8 @@
 \chapter{Fundamentarea teoretică și soluții similare}
 \label{cap:cap2}
 
+În acest capitol se evidențiază istoria dispozitivelor VR, cât și detalii despre tehnologiile de ultimă generație și modul în care au fost folosite.
+
 \section{VR / AR}
 
 Realitatea virtuală și-a făcut apariția conceptuală și experimentală pentru prima dată în anul 1968, odată cu dispozitivul creat de Ivan Sutherland și Bob Sproull, considerat primul sistem de afișare „head-mounted” (HMD). Acest sistem era conectat la un calculator mainframe al epocii, care ocupa o întreagă încăpere și era singurul capabil să proceseze și să redea imaginile grafice tridimensionale simple necesare. Dispozitivul HMD în sine era greoi, impunând suspendarea de tavan, fapt ce i-a atras porecla „The Sword of Damocles” și a subliniat limitările hardware considerabile ale acelor timpuri.
@@ -39,9 +41,9 @@ Dispozitivele ulterioare au adus îmbunătățiri semnificative: rezoluții mult
 
 Fie că vorbim despre un dispozitiv VR lansat recent sau unul istoric, principiul de funcționare a rămas același: simularea unei alte realități prin intermediul unor afișaje dedicate pentru fiecare ochi, însoțite de sunet stereo sau 3D, livrat prin căști sau boxe speciale. Cu ajutorul acestor elemente hardware esențiale, simțurile noastre sunt „păcălite” să creadă că ne aflăm într-un alt spațiu, în afara realității, oferind o senzație intensă.
 
-\section{Unreal Engine 5}
+\section{Unreal Engine 5}\cite{unreal:homepage}
 
-Fiind succesorul lui Unreal Engine 4, Unreal Engine 5 (UE5)\cite{unreal-learn} este un motor de joc („game engine”) care permite realizarea unor experiențe interactive de ultimă generație, fiind mult mai ușor de folosit decât dezvoltarea unui motor grafic de la zero. Punctul de plecare este același pentru toți dezvoltatorii, însă UE5 oferă o infinitate de direcții și domenii spre care aceștia se pot orienta. În majoritatea cazurilor sunt create jocuri, dar există și numeroase exemple extra-ludice în care motorul este extrem de util.
+Fiind succesorul lui Unreal Engine 4, Unreal Engine 5 (UE5)\cite{unreal:learning} este un motor de joc („game engine”) care permite realizarea unor experiențe interactive de ultimă generație, fiind mult mai ușor de folosit decât dezvoltarea unui motor grafic de la zero. Punctul de plecare este același pentru toți dezvoltatorii, însă UE5 oferă o infinitate de direcții și domenii spre care aceștia se pot orienta. În majoritatea cazurilor sunt create jocuri, dar există și numeroase exemple extra-ludice în care motorul este extrem de util.
 
 \begin{figure} [htp] 
 \centering 
@@ -56,7 +58,7 @@ Spre exemplu, BMW, Audi, Porsche și Volvo folosesc Unreal pentru dezvoltarea de
 
 Versiunea majoră 5.0 (lansată pe 5 aprilie 2022) a adus numeroase îmbunătățiri - Nanite (sistem de geometrie pe bază de micro-poligoane), Lumen (iluminare globală și reflexii în timp real), Ray Tracing avansat, optimizări de performanță și flux de lucru, suport extins pentru MetaHuman și un sistem modernizat de animație și simulare fizică.
 
-Noutățile din 5.4 \cite{unreal-doc} (folosită în proiectul VR Museum):
+Noutățile din 5.4 \cite{unreal:docs} (folosită în proiectul VR Museum):
 
 \begin{adjustwidth}{2em}{0pt}
 \begin{description}
@@ -78,7 +80,18 @@ Aici intervine Ray Tracing-ul în timp real. Spre deosebire de metodele clasice,
     \item Obiectele din scenă sunt iluminate atât direct (de la sursa primară), cât și indirect (prin reflexii multiple sau lumină difuză), creând umbre moi, reflexii precise și o iluminare globală mai verosimilă.
 \end{itemize}
 
-Tehnologia Ray Tracing nu este nouă; ea este folosită de mult timp în cinematografie, mai ales în filmele de animație 3D produse de studiouri precum Pixar, DreamWorks sau Disney. În producția de filme, fiecare cadru poate fi randat în minute ori chiar ore pe multe servere, unde costul nu este constrâns de cerințe de timp real. Din acest motiv, tehnica nu era luată în considerare pentru jocurile video: hardware-ul existent putea livra doar 2–5 cadre pe secundă în condiții optime, mult sub pragul necesar pentru un gameplay fluent.
+Tehnologia Ray Tracing nu este nouă; ea este folosită de mult timp în cinematografie, mai ales în filmele de animație 3D produse de studiouri precum Pixar, DreamWorks sau Disney. În producția de filme, fiecare cadru poate fi randat în minute ori chiar ore pe multe servere, unde costul nu este constrâns de cerințe de timp real. Din acest motiv, tehnica nu era luată în considerare pentru jocurile video: hardware-ul existent putea randa doar 2–5 cadre pe secundă în condiții optime, mult sub pragul necesar pentru un gameplay fluent.
+\clearpage
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{continut/capitol2/figuri/RTX_ON_OFF.png}
+  \caption[Cyberpunk 2077 – RT ON/OFF]{Cyberpunk 2077 – comparaţie Ray Tracing \textsc{ON} (stânga) vs.\ \textsc{OFF} (dreapta)\protect\footnotemark.\ 
+  Diferenţa este evidentă la nivelul reflexiei apei, mult mai pronunţată şi detaliată în modul \textsc{ON}.}
+  \label{fig:RayTracing}
+\end{figure}
+
+\footnotetext{Captură de ecran preluată din videoclipul YouTube: \url{https://www.youtube.com/watch?v=F4HkXEzzcRw}.}
+
 
 
 \section{Evoluția hardware}
@@ -89,7 +102,7 @@ Acest lucru s-a schimbat în anul 2018, când Nvidia a lansat prima serie de pl�
 
 \section{\textbf{D}eep \textbf{L}earning \textbf{S}uper \textbf{S}ampling}
 
-Prescurtat DLSS\cite{nvidia-dlss} și având 4 versiuni în momentul actual, acest algoritm folosește nucleele Tensor pentru a spori calitatea imaginii. Jocul este randat la o rezoluție mai mică, iar placa video folosește tehnologia DLSS pentru a face “upscaling” la imagine, astfel permițându-ne să jucăm la setari grafice mult mai mari și desigur, cu Ray Tracing pornit.
+Prescurtat DLSS\cite{nvidia:dlss} și având 4 versiuni în momentul actual, acest algoritm folosește nucleele Tensor pentru a spori calitatea imaginii. Jocul este randat la o rezoluție mai mică, iar placa video folosește tehnologia DLSS pentru a face “upscaling” la imagine, astfel permițându-ne să jucăm la setari grafice mult mai mari și desigur, cu Ray Tracing pornit.
 
 Cele patru mari generații sunt: 
 

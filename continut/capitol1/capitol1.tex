@@ -34,59 +34,37 @@ Pentru a atinge un nivel ridicat de fidelitate vizuală și performanță, au fo
 
 \noindent Dezvoltarea aplicației „VR Museum” a urmat un proces iterativ, structurat în următoarele etape principale:
 
-\noindent \textbf{Concepția și proiectarea arhitecturală}
+\noindent\textbf{Concepția și proiectarea arhitecturală} a început cu definirea structurii spaţiale a muzeului, incluzând atât zonele interioare de expunere, cât şi mediul exterior explorabil. S-a ales o clădire de dimensiuni moderate pentru a optimiza încărcarea resurselor, iar ulterior s-au stabilit layout-ul general şi fluxul de navigare al utilizatorului prin spaţiul virtual.
 
-\begin{itemize}
-  \item Definirea structurii spațiale a muzeului, incluzând atât zonele interioare de expunere, cât și mediul exterior explorabil. S-a optat pentru o clădire de dimensiuni moderate pentru a optimiza încărcarea resurselor;
-  \item Stabilirea layout-ului general și a fluxului de navigare pentru utilizator.
-\end{itemize}
+\noindent\textbf{Modelarea şi crearea mediului virtual} au vizat realizarea modelului 3D al clădirii muzeului, urmată de aplicarea texturilor pe suprafeţele interioare şi exterioare pentru a conferi realism şi identitate vizuală. Peisajul exterior a fost dezvoltat prin modelarea terenului, texturarea specifică (sol, iarbă) şi adăugarea elementelor de vegetaţie şi decor. În plus, au fost integrate resurse grafice 3D – exponate şi obiecte tematice – selectate din surse online gratuite (de exemplu, Fab Marketplace–Epic Games) datorită compatibilităţii lor cu Unreal Engine şi relevanţei faţă de tematica muzeală.
 
-\noindent \textbf{Modelarea și crearea mediului virtual}
+\noindent\textbf{Implementarea detaliilor vizuale şi funcţionale} a presupus amplasarea şi configurarea exponatelor în interiorul muzeului, reglarea fină a sistemelor Lumen şi Nanite pentru a maximiza calitatea vizuală raportată la performanţă, precum şi includerea unor obiecte de scenă menite să valorifice capabilităţile de randare avansată (de pildă, reflexii detaliate sau interacţiunea luminii cu materiale complexe, specifice Ray Tracing-ului implicit ori explicit configurat).
 
-\begin{itemize}
-  \item Realizarea modelului 3D al clădirii muzeului;
-  \item Aplicarea texturilor pe suprafețele interioare și exterioare pentru a conferi realism și identitate vizuală;
-  \item Dezvoltarea peisajului exterior, care a inclus modelarea terenului, aplicarea texturilor specifice (sol, iarbă) și adăugarea de elemente de vegetație și decorative;
-  \item Integrarea resurselor grafice 3D (asset-uri), precum exponate și elemente de decor, provenind din surse online, disponibile gratuit (ex. Fab Marketplace – Epic Games). Acestea au fost selectate pentru compatibilitatea cu Unreal Engine și relevanța pentru tematica muzeală.
-\end{itemize}
+Procesul de testare al aplicaţiei \emph{VR Museum} a fost iterativ pe tot parcursul ciclului de dezvoltare, urmărind să asigure funcţionalitatea corectă şi o experienţă de calitate pentru utilizator. Testele au fost executate pe o cască de realitate virtuală Oculus Quest 2 conectată la PC atât prin reţea wireless (folosind Virtual Desktop şi platforma SteamVR), cât şi prin cablu, prin Oculus Link şi runtime-ul OpenXR.
 
-\noindent \textbf{Implementarea detaliilor vizuale și funcționale}
+În cadrul testării s-au urmărit patru aspecte principale: funcţionalitatea de navigare (libertatea de mişcare, coliziunile cu mediul şi fluenţa deplasării), calitatea vizuală (corectitudinea afişării texturilor, materialelor, iluminării şi a modelelor 3D), performanţa ( menţinerea unei rate de cadre constante şi acceptabile pentru o experienţă VR confortabilă, precum şi monitorizarea latenţei),  imersiunea şi uzabilitatea (evaluarea percepţiei generale a utilizatorului în mediul virtual).
 
-\begin{itemize}
-  \item Amplasarea și configurarea exponatelor în cadrul muzeului;
-  \item Configurarea fină a sistemelor Lumen și Nanite pentru a maximiza calitatea vizuală în raport cu performanța;
-  \item Includerea unor obiecte și elemente de scenă menite să valorifice capabilitățile avansate de randare (de ex., prin reflexii detaliate sau interacțiunea luminii cu materiale complexe, specific Ray Tracing-ului implicit sau explicit configurat).
-\end{itemize}
 
-Procesul de testare a aplicației „VR Museum” a fost realizat iterativ, pe parcursul întregului ciclu de dezvoltare, pentru a asigura funcționalitatea corespunzătoare și o experiență calitativă pentru utilizator. Aceste teste au fost efectuate utilizând o consolă de realitate virtuală numită Oculus Quest 2, conectat la un sistem PC prin multiple configurații:
-
-\begin{itemize}
-  \item Conexiune wireless, prin intermediul aplicației Virtual Desktop și al platformei SteamVR;
-  \item Conexiune prin cablu, utilizând Oculus Link și runtime-ul OpenXR.
-\end{itemize}
-
-\noindent Principalele aspecte urmărite în cadrul testării au fost:
-
-\begin{itemize}
-    \item Funcționalitatea de navigare, libertatea de mișcare, coliziunile cu mediul, fluența deplasării.
-    \item Calitatea vizuală, corectitudinea afișării texturilor, materialelor, iluminării și a modelelor 3D.
-    \item Performanța, menținerea unei rate de cadre constante și acceptabile pentru o experiență VR confortabilă, monitorizarea latenței.
-    \item Imersiunea și usabilitatea - evaluarea generală a experienței utilizatorului în mediul virtual.
-\end{itemize}
 
 
 \section{Structura lucrării}
 
-Lucrarea este structurată într-un mod logic și progresiv. La început, sunt prezentate fundamentele teoretice ale tehnologiilor utilizate, continuând apoi cu procesul de dezvoltare a experienței VR Museum.
+Lucrarea este organizată în cinci capitole dispuse progresiv, de la fundamente teoretice până la concluzii şi direcţii de dezvoltare ulterioară.
 
-În primele capitole sunt abordate conceptele de bază legate de realitatea virtuală, detalii despre versiunea Unreal Engine folosită și opțiunile noi pe care aceasta le aduce față de versiunile anterioare. Sunt explicate tehnologiile Lumen, Nanite, Ray Tracing, Path Tracing și DLSS, fiecare având un rol esențial în obținerea unei experiențe vizuale realiste și memorabile.
+\smallskip
+\noindent\textbf{Capitolul~\ref{cap:cap1}} introduce tema proiectului, justifică alegerea ei şi prezintă obiectivele urmărite. Sunt precizate contextul tehnologic şi rolul realităţii virtuale în îmbunătăţirea experienţelor muzeale, precum şi metodologia generală adoptată pe parcursul cercetării.
 
-Ulterior, lucrarea descrie metodologia aplicată în dezvoltarea aplicației, evidențiind soluțiile propuse pentru interacțiune, navigare, implementarea sistemului audio (sound engine), precum și setările și optimizările realizate pentru îmbunătățirea performanței aplicației.
+\smallskip
+\noindent\textbf{Capitolul~\ref{cap:cap2}} acoperă fundamentele teoretice. Aici sunt detaliate conceptele esenţiale privind realitatea virtuală, arhitectura \textit{Unreal Engine 5} şi tehnologiile adiacente—Lumen, Nanite, Ray Tracing, Path Tracing şi DLSS—subliniind modul în care acestea contribuie la obţinerea unui nivel ridicat de realism vizual şi performanţă.
 
-De asemenea, sunt menționate pe scurt și componentele predefinite din șablonul oferit de Unreal Engine, care includ funcții esențiale pentru o dezvoltare cât mai simplă și eficientă a funcționalităților specifice realității virtuale.
+\smallskip
+\noindent\textbf{Capitolul~\ref{cap:cap3}} descrie procesul de concepţie şi realizare a aplicaţiei \emph{VR Museum}. Sunt explicate structura spaţială a muzeului, modelarea şi texturarea mediului 3D, integrarea exponatelor, precum şi soluţiile de interacţiune, navigare şi management audio. Capitolul prezintă şi optimizările de performanţă aplicate astfel încât experienţa să rămână fluentă pe dispozitive de realitate virtuală.
 
-Lucrarea conține și un capitol dedicat testării aplicației, atât din punct de vedere tehnic (hardware, performanță, recomandări de setări), cât și din perspectiva experienței utilizatorului. Aceasta este analizată atât de către dezvoltatorul aplicației, cât și de alte persoane care au avut ocazia să testeze muzeul virtual și să ofere feedback.
+\smallskip
+\noindent\textbf{Capitolul~\ref{cap:cap4}} este dedicat testării şi evaluării rezultatelor. Se examinează comportamentul aplicaţiei pe configuraţii hardware diferite, se măsoară performanţa (rata de cadre, latenţa, stabilitatea) şi se analizează calitatea vizuală. Totodată, este inclus un studiu calitativ bazat pe feedback-ul utilizatorilor care au experimentat muzeul în realitate virtuală.
 
-În final, lucrarea se încheie cu o serie de concluzii personale legate de întregul proces de dezvoltare, lecțiile învățate, dificultățile întâmpinate și modul în care au fost soluționate. Sunt prezentate și direcțiile posibile de extindere a proiectului în viitor.
+\smallskip
+\noindent\textbf{Capitolul~\ref{cap:cap5}} sintetizează principalele concluzii, evidenţiază dificultăţile întâmpinate şi modul în care au fost depăşite, apoi propune direcţii viitoare de extindere—atât din perspectiva conţinutului muzeal, cât şi a îmbunătăţirii tehnice.
 
-Bibliografia reunește sursele de informare utilizate pe parcursul cercetării, incluzând documentații oficiale, resurse online și lucrări relevante pentru tematica abordată.
+\smallskip
+La final, \textbf{Bibliografia} și \textbf{anexele} reuneşte sursele consultate pe parcursul cercetării—documentaţii oficiale, articole ştiinţifice şi resurse online.
