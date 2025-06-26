@@ -3,7 +3,7 @@
 
 Evoluția tehnologică accelerată din ultimele decenii a generat transformări profunde în multiple sectoare ale societății, influențând fundamental modul de acces la informație, furnizarea serviciilor și interacțiunile cotidiene. Aceste progrese au facilitat materializarea unor soluții tehnice care, anterior, erau considerate concepte futuriste. În acest context, tehnologiile de realitate augmentată (AR) și realitate virtuală (VR) s-au conturat ca domenii inovatoare, cu un potențial semnificativ de a reconfigura experiența umană în mediul digital.
 
-În România, deși adoptarea pe scară largă a tehnologiilor AR și VR se află într-un stadiu emergent, parțial condiționată de factori precum costurile echipamentelor specializate și dezvoltarea infrastructurii aferente, perspectivele de aplicabilitate sunt considerabile. Realitatea augmentată și realitatea virtuală permit crearea, controlul și personalizarea avansată a experiențelor digitale, oferind noi paradigme pentru interacțiunea utilizatorului cu conținutul virtual. De la educație și medicină, până la divertisment și turism virtual, aplicațiile realizate în realitatea virtuală sunt aproape nelimitate, în sensul că imaginația este singura limită pe care o avem. În ciuda popularității reduse la nivel local, interesul pentru realitatea virtuală este în creștere, iar odată cu evoluția platformelor ce pot aduce ideile în realitate (Unreal Engine, Unity, Godot, etc.) și integrarea unor tehnologii avansate disponibile la nivel de procesor, procesor grafic și software avansat fac posibilă construirea unor experiențe vizuale fluide, realiste și accesibile unui public tot mai larg.
+În România, deși adoptarea pe scară largă a tehnologiilor AR și VR se află într-un stadiu emergent, parțial condiționată de factori precum costurile echipamentelor specializate și dezvoltarea infrastructurii aferente, perspectivele de aplicabilitate sunt considerabile. Realitatea augmentată și realitatea virtuală permit crearea, controlul și personalizarea avansată a experiențelor digitale, oferind noi paradigme pentru interacțiunea utilizatorului cu conținutul virtual. De la educație și medicină, până la divertisment și turism virtual, aplicațiile realizate în realitatea virtuală sunt aproape nelimitate, în sensul că imaginația este singura limită prezentă. În ciuda popularității reduse la nivel local, interesul pentru realitatea virtuală este în creștere, iar odată cu evoluția platformelor ce pot aduce ideile în realitate (Unreal Engine, Unity, Godot, etc.) și integrarea unor tehnologii avansate disponibile la nivel de procesor, procesor grafic și software avansat fac posibilă construirea unor experiențe vizuale fluide, realiste și accesibile unui public tot mai larg.
 
 Lucrarea intitulată „VR Museum” este un program realizat în Unreal Engine, iar împreună cu câteva plugin-uri dezvoltate de Nvidia, reprezintă un muzeu prezentat în realitate virtuală, în care utilizatorul se poate plimba liber printre mai multe exponate, amplasate atât în interiorul muzeului, cât și în exteriorul acestuia. 
 
@@ -47,7 +47,7 @@ Pentru a atinge un nivel ridicat de fidelitate vizuală și performanță, au fo
   \item Realizarea modelului 3D al clădirii muzeului;
   \item Aplicarea texturilor pe suprafețele interioare și exterioare pentru a conferi realism și identitate vizuală;
   \item Dezvoltarea peisajului exterior, care a inclus modelarea terenului, aplicarea texturilor specifice (sol, iarbă) și adăugarea de elemente de vegetație și decorative;
-  \item Integrarea resurselor grafice 3D (asset-uri), precum modele de exponate și elemente de decor, provenind din surse online cu licență de utilizare gratuită (ex. Fab Marketplace – Epic Games). Acestea au fost selectate pentru compatibilitatea cu Unreal Engine și relevanța pentru tematica muzeală.
+  \item Integrarea resurselor grafice 3D (asset-uri), precum exponate și elemente de decor, provenind din surse online, disponibile gratuit (ex. Fab Marketplace – Epic Games). Acestea au fost selectate pentru compatibilitatea cu Unreal Engine și relevanța pentru tematica muzeală.
 \end{itemize}
 
 \noindent \textbf{Implementarea detaliilor vizuale și funcționale}
@@ -58,11 +58,11 @@ Pentru a atinge un nivel ridicat de fidelitate vizuală și performanță, au fo
   \item Includerea unor obiecte și elemente de scenă menite să valorifice capabilitățile avansate de randare (de ex., prin reflexii detaliate sau interacțiunea luminii cu materiale complexe, specific Ray Tracing-ului implicit sau explicit configurat).
 \end{itemize}
 
-Procesul de testare a aplicației „VR Museum” a fost realizat iterativ, pe parcursul întregului ciclu de dezvoltare, pentru a asigura funcționalitatea corespunzătoare și o experiență calitativă pentru utilizator. Aceste teste au fost efectuate utilizând un set de realitate virtuală Oculus Quest 2, conectat la un sistem PC prin multiple configurații:
+Procesul de testare a aplicației „VR Museum” a fost realizat iterativ, pe parcursul întregului ciclu de dezvoltare, pentru a asigura funcționalitatea corespunzătoare și o experiență calitativă pentru utilizator. Aceste teste au fost efectuate utilizând o consolă de realitate virtuală numită Oculus Quest 2, conectat la un sistem PC prin multiple configurații:
 
 \begin{itemize}
   \item Conexiune wireless, prin intermediul aplicației Virtual Desktop și al platformei SteamVR;
-  \item Conexiune prin cablu, utilizând Oculus Link și runtime-ul OculusXR.
+  \item Conexiune prin cablu, utilizând Oculus Link și runtime-ul OpenXR.
 \end{itemize}
 
 \noindent Principalele aspecte urmărite în cadrul testării au fost:
@@ -81,7 +81,7 @@ Lucrarea este structurată într-un mod logic și progresiv. La început, sunt p
 
 În primele capitole sunt abordate conceptele de bază legate de realitatea virtuală, detalii despre versiunea Unreal Engine folosită și opțiunile noi pe care aceasta le aduce față de versiunile anterioare. Sunt explicate tehnologiile Lumen, Nanite, Ray Tracing, Path Tracing și DLSS, fiecare având un rol esențial în obținerea unei experiențe vizuale realiste și memorabile.
 
-Ulterior, lucrarea descrie metodologia aplicată în dezvoltarea aplicației, evidențiind soluțiile propuse pentru interacțiune, navigare, implementarea motorului audio (sound engine), precum și setările și optimizările realizate pentru îmbunătățirea performanței aplicației.
+Ulterior, lucrarea descrie metodologia aplicată în dezvoltarea aplicației, evidențiind soluțiile propuse pentru interacțiune, navigare, implementarea sistemului audio (sound engine), precum și setările și optimizările realizate pentru îmbunătățirea performanței aplicației.
 
 De asemenea, sunt menționate pe scurt și componentele predefinite din șablonul oferit de Unreal Engine, care includ funcții esențiale pentru o dezvoltare cât mai simplă și eficientă a funcționalităților specifice realității virtuale.
 
