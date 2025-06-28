@@ -27,23 +27,24 @@ Realitatea virtuală și-a făcut apariția conceptuală și experimentală pent
 
 
 Desigur, au existat și concepte anterioare acestei inovații. Un exemplu notabil este Sensorama, inventat de Morton Heilig în 1957. Această mașinărie electromecanică voluminoasă funcționa ca o unitate autonomă, integrând toate componentele necesare pentru a oferi o experiență multisenzorială (imagini 3D, sunet stereo, mirosuri, vibrații) pentru până la patru persoane simultan. 
-Deși nu era un HMD și nu necesita un calculator extern în sensul modern, Sensorama a reprezentat un precursor important al experiențelor de tip "immersive", demonstrând potențialul stimulării multiplelor simțuri.
+Deși nu era un HMD și nu necesita un calculator extern în sensul modern, Sensorama a reprezentat un precursor important al experiențelor de tip "immersive", demonstrând potențialul stimulării multiplelor simțuri. 
+Modul de folosire a acestora este exemplificat în figura 2.1.
 \begin{wrapfigure}{r}{5cm}
     \centering
     \includegraphics[width=5cm]{continut/capitol2/figuri/oculusriftdk1.png}
     \caption{Oculus Rift DK1}
     \label{fig:Oculus_DK1}
 \end{wrapfigure}
-Trecerea de la experimente academice la produse orientate către consumatori a fost marcată decisiv de lansarea primului dispozitiv VR fabricat în masă și disponibil publicului larg: Oculus Rift DK1, în martie 2013, la un preț de aproximativ 300 de dolari (aproximativ 450\$ în anul 2025, după calcularea inflației). Apariția sa a fost strâns legată de progresele în tehnologia ecranelor compacte de înaltă rezoluție (impulsionate de industria telefoanelor mobile) și, crucial, de creșterea exponențială a puterii de calcul și accesibilității computerelor personale (PC-urilor). 
+Trecerea de la experimente academice la produse orientate către consumatori a fost marcată decisiv de lansarea primului dispozitiv VR fabricat în masă și disponibil publicului larg: Oculus Rift DK1 (fig 2.2), în martie 2013, la un preț de aproximativ 300 de dolari (aproximativ 450\$ în anul 2025, după calcularea inflației). Apariția sa a fost strâns legată de progresele în tehnologia ecranelor compacte de înaltă rezoluție (impulsionate de industria telefoanelor mobile) și, crucial, de creșterea exponențială a puterii de calcul și accesibilității computerelor personale (PC-urilor). 
 Aceste PC-uri, echipate cu plăci grafice din ce în ce mai performante, au devenit platforma hardware necesară pentru a rula aplicațiile VR. Kitul de dezvoltare Oculus Rift DK1 oferea un ecran de 7 inch (1280x800 px, rezultând 640x800 px per ochi), un câmp vizual de aproximativ 90 de grade și un sistem de urmărire a mișcării capului pe trei axe (head-tracking). Deși nu oferea urmărire a poziției în spațiu (positional tracking), care a devenit un standard ulterior și a necesitat dezvoltarea unor sisteme de senzori suplimentari (externi sau integrați), DK1 a reprezentat un moment cheie în popularizarea realității virtuale.
 De atunci, evoluția hardware-ului VR a continuat într-un ritm alert.
 Dispozitivele ulterioare au adus îmbunătățiri semnificative: rezoluții mult mai mari ale ecranelor, câmpuri vizuale extinse, rate de reîmprospătare superioare, sisteme de urmărire pozițională din ce în ce mai precise (inside-out tracking, eliminând nevoia senzorilor externi), și controlere dedicate cu feedback haptic. În paralel, cerințele hardware pentru PC-urile capabile să susțină aceste experiențe au rămas ridicate, dar au apărut și soluții alternative: console de jocuri cu suport VR și, mai recent, dispozitive VR autonome (standalone), care integrează unitatea de procesare direct în cască, eliminând dependența de un PC sau o consolă externă.
 
 Fie că vorbim despre un dispozitiv VR lansat recent sau unul istoric, principiul de funcționare a rămas același: simularea unei alte realități prin intermediul unor afișaje dedicate pentru fiecare ochi, însoțite de sunet stereo sau 3D, livrat prin căști sau boxe speciale. Cu ajutorul acestor elemente hardware esențiale, simțurile noastre sunt „păcălite” să creadă că ne aflăm într-un alt spațiu, în afara realității, oferind o senzație intensă.
 
-\section{Unreal Engine 5}\cite{unreal:homepage}
+\section{Unreal Engine 5}
 
-Fiind succesorul lui Unreal Engine 4, Unreal Engine 5 (UE5)\cite{unreal:learning} este un motor de joc („game engine”) care permite realizarea unor experiențe interactive de ultimă generație, fiind mult mai ușor de folosit decât dezvoltarea unui motor grafic de la zero. Punctul de plecare este același pentru toți dezvoltatorii, însă UE5 oferă o infinitate de direcții și domenii spre care aceștia se pot orienta. În majoritatea cazurilor sunt create jocuri, dar există și numeroase exemple extra-ludice în care motorul este extrem de util.
+Fiind succesorul lui Unreal Engine 4, Unreal Engine 5 (UE5)\cite{unreal:learning} este un motor de joc („game engine”) care permite realizarea unor experiențe interactive de ultimă generație, fiind mult mai ușor de folosit decât dezvoltarea unui motor grafic de la zero\cite{unreal:homepage}. Punctul de plecare este același pentru toți dezvoltatorii, însă UE5 oferă o infinitate de direcții și domenii spre care aceștia se pot orienta. În majoritatea cazurilor sunt create jocuri, dar există și numeroase exemple extra-ludice în care motorul este extrem de util.
 
 \begin{figure} [htp] 
 \centering 
@@ -79,8 +80,17 @@ Aici intervine Ray Tracing-ul în timp real. Spre deosebire de metodele clasice,
     \item Razele se reflectă, refractă sau sunt absorbite diferit, în funcție de proprietățile fiecărui material (culoare, rugozitate, indice de refracție).
     \item Obiectele din scenă sunt iluminate atât direct (de la sursa primară), cât și indirect (prin reflexii multiple sau lumină difuză), creând umbre moi, reflexii precise și o iluminare globală mai verosimilă.
 \end{itemize}
+In figura 2.4 se poate observa un exemplu de funcționalitate a Ray Tracing-ului. Această tehnologie nu este nouă; ea este folosită de mult timp în cinematografie, mai ales în filmele de animație 3D produse de studiouri precum Pixar, DreamWorks sau Disney. În producția de filme, fiecare cadru poate fi randat în minute ori chiar ore pe multe servere, unde costul nu este constrâns de cerințe de timp real. Din acest motiv, tehnica nu era luată în considerare pentru jocurile video: hardware-ul existent putea randa doar 2–5 cadre pe secundă în condiții optime, mult sub pragul necesar pentru un gameplay fluent. Un exemplu de comparație se regăsește in fig 2.5.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=8cm]{continut/capitol2/figuri/ray_tracing.jpg}
+  \caption{Ray-tracing basics\protect\footnotemark}
+  \label{fig:ray-tracing}
+\end{figure}
+\footnotetext{Sursă: NVIDIA Developer — \emph{Ray Tracing Fundamentals}.}
 
-Tehnologia Ray Tracing nu este nouă; ea este folosită de mult timp în cinematografie, mai ales în filmele de animație 3D produse de studiouri precum Pixar, DreamWorks sau Disney. În producția de filme, fiecare cadru poate fi randat în minute ori chiar ore pe multe servere, unde costul nu este constrâns de cerințe de timp real. Din acest motiv, tehnica nu era luată în considerare pentru jocurile video: hardware-ul existent putea randa doar 2–5 cadre pe secundă în condiții optime, mult sub pragul necesar pentru un gameplay fluent.
+
+
 \clearpage
 \begin{figure}[ht]
   \centering
@@ -102,70 +112,81 @@ Acest lucru s-a schimbat în anul 2018, când Nvidia a lansat prima serie de pl�
 
 \section{\textbf{D}eep \textbf{L}earning \textbf{S}uper \textbf{S}ampling}
 
-Prescurtat DLSS\cite{nvidia:dlss} și având 4 versiuni în momentul actual, acest algoritm folosește nucleele Tensor pentru a spori calitatea imaginii. Jocul este randat la o rezoluție mai mică, iar placa video folosește tehnologia DLSS pentru a face “upscaling” la imagine, astfel permițându-ne să jucăm la setari grafice mult mai mari și desigur, cu Ray Tracing pornit.
+Prescurtat DLSS\cite{nvidia:dlss} și având 4 versiuni în momentul actual, acest algoritm folosește nucleele Tensor pentru a spori calitatea imaginii. Jocul este randat la o rezoluție mai mică, iar placa video folosește tehnologia DLSS pentru a face “upscaling” la imagine, astfel permițându-ne să jucăm la setari grafice mult mai mari și desigur, cu Ray Tracing pornit. Versiunile de DLSS, anul lansării și noutățile aduse sunt prezentate in tabelul 2.1, iar in tabelul 2.2 se pot observa modurile actuale.
 
-Cele patru mari generații sunt: 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{||c c c||}
+    \hline
+    Versiune & Anul lansării & Noile funcții introduse \\[0.5ex]
+    \hline\hline
+    DLSS 1.0 & 2018 & Super-Sampling AI clasic \\
+    \hline
+    DLSS 2.0 & 2020 & Super Temporal Resolution \\
+    \hline
+    DLSS 3   & 2022 & Frame Generation, cadre AI pe seria RTX 40 \\
+    \hline
+    DLSS 4   & 2025 & Multi Frame Generation, mai multe cadre AI generate \\[1ex]
+    \hline
+  \end{tabular}
+    \caption{Generații de DLSS}
+  \label{tab:dlss-generations}
+\end{table}
 
-\begin{center}
-\begin{tabular}{||c c c||} 
- \hline
- Versiune & Anul lansării & Noile funcții introduse \\ [0.5ex] 
- \hline\hline
- DLSS 1.0 & 2018 & Super-Sampling AI clasic \\ 
- \hline
- DLSS 2.0 & 2020 & Super Temporal Resolution \\
- \hline
- DLSS 3 & 2022 & Frame Generation, cadre AI pe seria RTX 40 \\
- \hline
- DLSS 4 & 2025 & Multi Frame Generation, mai multe cadre AI generate \\ [1ex] 
- \hline
-\end{tabular}
-\end{center}
 
 \noindent Între acestea, DLSS 3.5 (2023) a adus „Ray Reconstruction”, un nou model AI care înlocuiește denoiser-ele clasice pentru reflexii și iluminare ray-traced. 
 
-Prima evoluție s-a intamplat în anul 2020 când Nvidia a lansat seria de plăci video RTX 30, unde și-a făcut apariția DLSS 2. Acesta nu numai ca este mult mai eficient și antrenat pe un model mai performant, ci are 4 noi setari: 
+Prima evoluție s-a intamplat în anul 2020 când Nvidia a lansat seria de plăci video RTX 30, unde și-a făcut apariția DLSS 2. Acesta nu numai ca este mult mai eficient și antrenat pe un model mai performant, ci are 4 noi setări.
 
-\begin{center}
-\begin{tabular}{||c c||} 
- \hline
- Calitatea DLSS & Rezoluția internă (procent) \\ [0.5ex] 
- \hline\hline
- Ultra Performance & 33\% (Introdus in DLSS 2.1) \\ 
- \hline
- Performance & 50\%  \\
- \hline
- Balanced & 58\% \\
- \hline
- Quality & 66.6\%  \\ [1ex] 
- \hline
- Native Upscale & 100\% (DLAA, introdus in DLSS 2.2)  \\ [1ex] 
- \hline
-\end{tabular}
-\end{center}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{||l c||}
+    \hline
+    Calitatea DLSS & Rezoluția internă (\%) \\[0.5ex]
+    \hline\hline
+    Ultra Performance & 33\,\% (introdus în DLSS 2.1) \\
+    \hline
+    Performance       & 50\,\% \\
+    \hline
+    Balanced          & 58\,\% \\
+    \hline
+    Quality           & 66,6\,\% \\[1ex]
+    \hline
+    Native Upscale    & 100\,\% (DLAA, introdus în DLSS 2.2) \\[1ex]
+    \hline
+  \end{tabular}
+
+  \caption{Modurile DLSS}
+  \label{tab:dlss-res}
+\end{table}
+
 
 
  În 2022, odată cu seria GeForce RTX 40, DLSS 3 a extins aceste moduri cu Frame Generation, multiplicând rata de cadre cu 2-3× pe titluri compatibile (de ex. Cyberpunk 2077 RT Overdrive). În 2025, DLSS 4 duce mai departe ideea prin Multi Frame Generation, generând până la 8× mai multe cadre la 4K pe RTX 5090, cu un nou model transformator ce îmbunătățește stabilitatea temporală și reduce ghosting-ul. 
 
-Dacă jocul este randat la 1080p (1920×1080), rezoluția reală înainte de acest “upscale” realizat de DLSS sunt următoarele: 
+Dacă jocul este randat la 1080p (1920×1080), rezoluția reală înainte de acest “upscale” realizat de DLSS este prezentată in tabelul 2.3.
 
-\begin{center}
-\begin{tabular}{||c c||} 
- \hline
- Calitatea DLSS & Rezoluția internă \\ [0.5ex] 
- \hline\hline
- Ultra Performance & 640×360 \\ 
- \hline
- Performance & 960×540  \\
- \hline
- Balanced & 1114×626 \\
- \hline
- Quality & 1280×720  \\ [1ex] 
- \hline
- Native Upscale & 1920x1080 \\ [1ex] 
- \hline
-\end{tabular}
-\end{center}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{||c c||}
+    \hline
+    Calitatea DLSS & Rezoluția internă \\[0.5ex]
+    \hline\hline
+    Ultra Performance & 640×360 \\
+    \hline
+    Performance      & 960×540 \\
+    \hline
+    Balanced         & 1114×626 \\
+    \hline
+    Quality          & 1280×720 \\[1ex]
+    \hline
+    Native Upscale   & 1920×1080 \\[1ex]
+    \hline
+  \end{tabular}
+  \caption{Rezoluții interne pentru modurile DLSS}
+  \label{tab:dlss-res}
+\end{table}
+
 
 
 \noindent Aspectual, deși jocul este la o rezoluție mult mai mică, nu arată foarte diferit față de rezoluția “native”, atunci când nu ar fi fost folosit DLSS. Singurele diferențe se pot remarca la modurile Ultra Performance și Performance la mișcări bruște ale camerei, în special când ne uitam la margini (ex: frunzele din copaci în raport cu cerul, etc.)

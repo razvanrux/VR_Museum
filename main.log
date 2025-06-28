@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  26 JUN 2025 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  28 JUN 2025 18:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -802,6 +802,9 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 143
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (./main.aux
 
+LaTeX Warning: Label `tab:dlss-res' multiply defined.
+
+
 LaTeX Warning: Label `fig:VR Template' multiply defined.
 
 
@@ -1314,22 +1317,27 @@ Package pdftex.def Info: continut/capitol2/figuri/sensorama.jpg  used on input l
 <continut/capitol2/figuri/oculusriftdk1.png, id=356, 501.875pt x 404.51125pt>
 File: continut/capitol2/figuri/oculusriftdk1.png Graphic file (type png)
 <use continut/capitol2/figuri/oculusriftdk1.png>
-Package pdftex.def Info: continut/capitol2/figuri/oculusriftdk1.png  used on input line 33.
+Package pdftex.def Info: continut/capitol2/figuri/oculusriftdk1.png  used on input line 34.
 (pdftex.def)             Requested size: 142.26378pt x 114.66348pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--37
+\T1/ptm/m/n/12 Mo-dul de fo-lo-sire a aces-tora este exem-pli-fi-cat în fi-gura 2.1.
+ []
+
 
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 
+l.42 
       [5
 
  <./continut/capitol2/figuri/sword_of_damocles.jpg> <./continut/capitol2/figuri/sensorama.jpg> <./continut/capitol2/figuri/oculusriftdk1.png>]
 <continut/capitol2/figuri/ue5.png, id=365, 539.76656pt x 277.78781pt>
 File: continut/capitol2/figuri/ue5.png Graphic file (type png)
 <use continut/capitol2/figuri/ue5.png>
-Package pdftex.def Info: continut/capitol2/figuri/ue5.png  used on input line 51.
+Package pdftex.def Info: continut/capitol2/figuri/ue5.png  used on input line 52.
 (pdftex.def)             Requested size: 341.43306pt x 175.71933pt.
 
 
@@ -1337,57 +1345,63 @@ Package pdftex.def Info: continut/capitol2/figuri/ue5.png  used on input line 51
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66     \item[\textbf{{World Partition: }}]
+l.67     \item[\textbf{{World Partition: }}]
                                              Permite Ã®mpÄƒrÈ›irea lumii Ã®n... [6 <./continut/capitol2/figuri/UE5.png>]
-Overfull \hbox (3.70966pt too wide) in paragraph at lines 67--68
+Overfull \hbox (3.70966pt too wide) in paragraph at lines 68--69
 []\T1/ptm/m/n/12 Motorul în[]elege mult mai bine p r[]ile cor-
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 78.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 79.
 (c:/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
+<continut/capitol2/figuri/ray_tracing.jpg, id=375, 1066.98625pt x 701.62125pt>
+File: continut/capitol2/figuri/ray_tracing.jpg Graphic file (type jpg)
+<use continut/capitol2/figuri/ray_tracing.jpg>
+Package pdftex.def Info: continut/capitol2/figuri/ray_tracing.jpg  used on input line 86.
+(pdftex.def)             Requested size: 227.62204pt x 149.67868pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
+
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 \clearpage
-                [7]
-<continut/capitol2/figuri/RTX_ON_OFF.png, id=378, 1363.34344pt x 689.57625pt>
+l.94 \clearpage
+                [7 <./continut/capitol2/figuri/ray_tracing.jpg>]
+<continut/capitol2/figuri/RTX_ON_OFF.png, id=382, 1363.34344pt x 689.57625pt>
 File: continut/capitol2/figuri/RTX_ON_OFF.png Graphic file (type png)
 <use continut/capitol2/figuri/RTX_ON_OFF.png>
-Package pdftex.def Info: continut/capitol2/figuri/RTX_ON_OFF.png  used on input line 87.
+Package pdftex.def Info: continut/capitol2/figuri/RTX_ON_OFF.png  used on input line 97.
 (pdftex.def)             Requested size: 386.95897pt x 195.72107pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.145 \end{center}
-                   [8
+l.140 
+       [8
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./continut/capitol2/figuri/RTX_ON_OFF.png>]
 
 [9]
-Overfull \hbox (16.22412pt too wide) in paragraph at lines 230--231
+
+[10]
+Overfull \hbox (16.22412pt too wide) in paragraph at lines 251--252
 []\T1/ptm/m/n/12 - unde uti-li-za-to-rul se poate mi[]ca li-ber în spa[]iul vir-tual []i poate interac[]iona
  []
 
 
 
-[10]
-
 [11])
 
 [12] (./continut/capitol3/capitol3.tex
 Capitolul 3.
-<continut/capitol3/figuri/UE_Templates.png, id=407, 576.65437pt x 499.8675pt>
+<continut/capitol3/figuri/UE_Templates.png, id=414, 576.65437pt x 499.8675pt>
 File: continut/capitol3/figuri/UE_Templates.png Graphic file (type png)
 <use continut/capitol3/figuri/UE_Templates.png>
 Package pdftex.def Info: continut/capitol3/figuri/UE_Templates.png  used on input line 22.
@@ -1400,7 +1414,7 @@ Package pdftex.def Info: continut/capitol3/figuri/UE_Templates.png  used on inpu
 ]
 
 [14 <./continut/capitol3/figuri/UE_Templates.png>]
-<continut/capitol3/figuri/VR_front.png, id=418, 1444.64719pt x 776.14969pt>
+<continut/capitol3/figuri/VR_front.png, id=425, 1444.64719pt x 776.14969pt>
 File: continut/capitol3/figuri/VR_front.png Graphic file (type png)
 <use continut/capitol3/figuri/VR_front.png>
 Package pdftex.def Info: continut/capitol3/figuri/VR_front.png  used on input line 58.
@@ -1410,7 +1424,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
 [][]
  []
 
-<continut/capitol3/figuri/VR_up.png, id=419, 877.02657pt x 561.59813pt>
+<continut/capitol3/figuri/VR_up.png, id=426, 877.02657pt x 561.59813pt>
 File: continut/capitol3/figuri/VR_up.png Graphic file (type png)
 <use continut/capitol3/figuri/VR_up.png>
 Package pdftex.def Info: continut/capitol3/figuri/VR_up.png  used on input line 63.
@@ -1418,7 +1432,7 @@ Package pdftex.def Info: continut/capitol3/figuri/VR_up.png  used on input line 
 
 
 [15 <./continut/capitol3/figuri/VR_front.png> <./continut/capitol3/figuri/VR_up.png>]
-<continut/capitol3/figuri/attempt.jpg, id=428, 1521.685pt x 1149.29375pt>
+<continut/capitol3/figuri/attempt.jpg, id=435, 1521.685pt x 1149.29375pt>
 File: continut/capitol3/figuri/attempt.jpg Graphic file (type jpg)
 <use continut/capitol3/figuri/attempt.jpg>
 Package pdftex.def Info: continut/capitol3/figuri/attempt.jpg  used on input line 91.
@@ -1428,7 +1442,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--93
 [][]
  []
 
-<continut/capitol3/figuri/attempt1jpg.jpg, id=429, 1547.7825pt x 1195.46625pt>
+<continut/capitol3/figuri/attempt1jpg.jpg, id=436, 1547.7825pt x 1195.46625pt>
 File: continut/capitol3/figuri/attempt1jpg.jpg Graphic file (type jpg)
 <use continut/capitol3/figuri/attempt1jpg.jpg>
 Package pdftex.def Info: continut/capitol3/figuri/attempt1jpg.jpg  used on input line 96.
@@ -1447,12 +1461,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [16]
-<continut/capitol3/figuri/beginning.png, id=434, 1468.73718pt x 783.67781pt>
+<continut/capitol3/figuri/beginning.png, id=441, 1468.73718pt x 783.67781pt>
 File: continut/capitol3/figuri/beginning.png Graphic file (type png)
 <use continut/capitol3/figuri/beginning.png>
 Package pdftex.def Info: continut/capitol3/figuri/beginning.png  used on input line 120.
 (pdftex.def)             Requested size: 341.43306pt x 182.17929pt.
-<continut/capitol3/figuri/scheme.png, id=435, 679.78969pt x 551.05875pt>
+<continut/capitol3/figuri/scheme.png, id=442, 679.78969pt x 551.05875pt>
 File: continut/capitol3/figuri/scheme.png Graphic file (type png)
 <use continut/capitol3/figuri/scheme.png>
 Package pdftex.def Info: continut/capitol3/figuri/scheme.png  used on input line 129.
@@ -1462,7 +1476,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--131
 [][]
  []
 
-<continut/capitol3/figuri/Screenshot 2025-03-03 135626.png, id=436, 1590.69281pt x 636.12656pt>
+<continut/capitol3/figuri/Screenshot 2025-03-03 135626.png, id=443, 1590.69281pt x 636.12656pt>
 File: continut/capitol3/figuri/Screenshot 2025-03-03 135626.png Graphic file (type png)
 <use continut/capitol3/figuri/Screenshot 2025-03-03 135626.png>
 Package pdftex.def Info: continut/capitol3/figuri/Screenshot 2025-03-03 135626.png  used on input line 134.
@@ -1475,7 +1489,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--136
 
 
 [17 <./continut/capitol3/figuri/attempt.jpg> <./continut/capitol3/figuri/attempt1jpg.jpg> <./continut/capitol3/figuri/beginning.png>]
-<continut/capitol3/figuri/3_terrain_mapping.png, id=444, 1172.88188pt x 782.925pt>
+<continut/capitol3/figuri/3_terrain_mapping.png, id=451, 1172.88188pt x 782.925pt>
 File: continut/capitol3/figuri/3_terrain_mapping.png Graphic file (type png)
 <use continut/capitol3/figuri/3_terrain_mapping.png>
 Package pdftex.def Info: continut/capitol3/figuri/3_terrain_mapping.png  used on input line 143.
@@ -1485,7 +1499,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--145
 [][]
  []
 
-<continut/capitol3/figuri/4_terrain_texture.png, id=445, 1573.37813pt x 892.08281pt>
+<continut/capitol3/figuri/4_terrain_texture.png, id=452, 1573.37813pt x 892.08281pt>
 File: continut/capitol3/figuri/4_terrain_texture.png Graphic file (type png)
 <use continut/capitol3/figuri/4_terrain_texture.png>
 Package pdftex.def Info: continut/capitol3/figuri/4_terrain_texture.png  used on input line 148.
@@ -1495,7 +1509,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
 [][]
  []
 
-<continut/capitol3/figuri/5_terrain_props.png, id=446, 1573.37813pt x 801.74532pt>
+<continut/capitol3/figuri/5_terrain_props.png, id=453, 1573.37813pt x 801.74532pt>
 File: continut/capitol3/figuri/5_terrain_props.png Graphic file (type png)
 <use continut/capitol3/figuri/5_terrain_props.png>
 Package pdftex.def Info: continut/capitol3/figuri/5_terrain_props.png  used on input line 152.
@@ -1505,7 +1519,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--154
 [][]
  []
 
-<continut/capitol3/figuri/6_state.png, id=447, 1705.87312pt x 810.02625pt>
+<continut/capitol3/figuri/6_state.png, id=454, 1705.87312pt x 810.02625pt>
 File: continut/capitol3/figuri/6_state.png Graphic file (type png)
 <use continut/capitol3/figuri/6_state.png>
 Package pdftex.def Info: continut/capitol3/figuri/6_state.png  used on input line 156.
@@ -1518,7 +1532,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
 
 [18 <./continut/capitol3/figuri/scheme.png> <./continut/capitol3/figuri/Screenshot 2025-03-03 135626.png> <./continut/capitol3/figuri/3_terrain_mapping.png> <./continut/capitol3/figuri/4_terrain_texture.png> <./continut/capitol3/figuri/5_terrain_props.png> <./continut/capitol3/figuri/6_state.png>]
-<continut/capitol3/figuri/material.png, id=460, 1080.28593pt x 578.16pt>
+<continut/capitol3/figuri/material.png, id=467, 1080.28593pt x 578.16pt>
 File: continut/capitol3/figuri/material.png Graphic file (type png)
 <use continut/capitol3/figuri/material.png>
 Package pdftex.def Info: continut/capitol3/figuri/material.png  used on input line 177.
@@ -1528,7 +1542,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--179
 [][]
  []
 
-<continut/capitol3/figuri/ez_mat.png, id=461, 1011.78pt x 576.65437pt>
+<continut/capitol3/figuri/ez_mat.png, id=468, 1011.78pt x 576.65437pt>
 File: continut/capitol3/figuri/ez_mat.png Graphic file (type png)
 <use continut/capitol3/figuri/ez_mat.png>
 Package pdftex.def Info: continut/capitol3/figuri/ez_mat.png  used on input line 182.
@@ -1542,12 +1556,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--184
 
 [19 <./continut/capitol3/figuri/material.png> <./continut/capitol3/figuri/ez_mat.png>]
 
-LaTeX Warning: Citation `sketchfab' on page 20 undefined on input line 212.
-
-
-
 [20]
-<continut/capitol3/figuri/rabbit.png, id=481, 1160.83687pt x 675.27281pt>
+
+LaTeX Warning: Citation `sketchfab' on page 21 undefined on input line 212.
+
+<continut/capitol3/figuri/rabbit.png, id=489, 1160.83687pt x 675.27281pt>
 File: continut/capitol3/figuri/rabbit.png Graphic file (type png)
 <use continut/capitol3/figuri/rabbit.png>
 Package pdftex.def Info: continut/capitol3/figuri/rabbit.png  used on input line 219.
@@ -1555,7 +1568,7 @@ Package pdftex.def Info: continut/capitol3/figuri/rabbit.png  used on input line
 
 
 [21 <./continut/capitol3/figuri/rabbit.png>]
-<continut/capitol3/figuri/ray2.png, id=490, 1790.94093pt x 804.75656pt>
+<continut/capitol3/figuri/ray2.png, id=497, 1790.94093pt x 804.75656pt>
 File: continut/capitol3/figuri/ray2.png Graphic file (type png)
 <use continut/capitol3/figuri/ray2.png>
 Package pdftex.def Info: continut/capitol3/figuri/ray2.png  used on input line 241.
@@ -1565,7 +1578,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 241--243
 [][]
  []
 
-<continut/capitol3/figuri/ray_traced.png, id=491, 1467.98438pt x 708.39656pt>
+<continut/capitol3/figuri/ray_traced.png, id=498, 1467.98438pt x 708.39656pt>
 File: continut/capitol3/figuri/ray_traced.png Graphic file (type png)
 <use continut/capitol3/figuri/ray_traced.png>
 Package pdftex.def Info: continut/capitol3/figuri/ray_traced.png  used on input line 246.
@@ -1575,7 +1588,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 246--248
 [][]
  []
 
-<continut/capitol3/figuri/rayBIMtraced.png, id=492, 1175.14032pt x 551.05875pt>
+
+
+[22 <./continut/capitol3/figuri/ray2.png> <./continut/capitol3/figuri/ray_traced.png>]
+<continut/capitol3/figuri/rayBIMtraced.png, id=506, 1175.14032pt x 551.05875pt>
 File: continut/capitol3/figuri/rayBIMtraced.png Graphic file (type png)
 <use continut/capitol3/figuri/rayBIMtraced.png>
 Package pdftex.def Info: continut/capitol3/figuri/rayBIMtraced.png  used on input line 263.
@@ -1585,10 +1601,7 @@ Overfull \hbox (0.80092pt too wide) in paragraph at lines 268--269
 []\T1/ptm/m/n/12 Totu[]i, în unele ca-zuri pot ap -rea mici ar-te-facte vi-zu-ale, pre-cum flickering-ul lu-mi-nii (palpita[]ii
  []
 
-
-
-[22 <./continut/capitol3/figuri/ray2.png> <./continut/capitol3/figuri/ray_traced.png>]
-<continut/capitol3/figuri/panel.png, id=500, 1116.42094pt x 462.97969pt>
+<continut/capitol3/figuri/panel.png, id=507, 1116.42094pt x 462.97969pt>
 File: continut/capitol3/figuri/panel.png Graphic file (type png)
 <use continut/capitol3/figuri/panel.png>
 Package pdftex.def Info: continut/capitol3/figuri/panel.png  used on input line 279.
@@ -1598,7 +1611,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 279--281
 [][]
  []
 
-<continut/capitol3/figuri/panel2.png, id=501, 1094.58937pt x 508.90125pt>
+<continut/capitol3/figuri/panel2.png, id=508, 1094.58937pt x 508.90125pt>
 File: continut/capitol3/figuri/panel2.png Graphic file (type png)
 <use continut/capitol3/figuri/panel2.png>
 Package pdftex.def Info: continut/capitol3/figuri/panel2.png  used on input line 284.
@@ -1608,7 +1621,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--286
 [][]
  []
 
-<continut/capitol3/figuri/hol.png, id=502, 1233.10687pt x 563.10374pt>
+
+
+[23 <./continut/capitol3/figuri/rayBIMtraced.png> <./continut/capitol3/figuri/panel.png> <./continut/capitol3/figuri/panel2.png>]
+<continut/capitol3/figuri/hol.png, id=518, 1233.10687pt x 563.10374pt>
 File: continut/capitol3/figuri/hol.png Graphic file (type png)
 <use continut/capitol3/figuri/hol.png>
 Package pdftex.def Info: continut/capitol3/figuri/hol.png  used on input line 297.
@@ -1618,7 +1634,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--299
 [][]
  []
 
-<continut/capitol3/figuri/hol2.png, id=503, 1263.21938pt x 571.38469pt>
+<continut/capitol3/figuri/hol2.png, id=519, 1263.21938pt x 571.38469pt>
 File: continut/capitol3/figuri/hol2.png Graphic file (type png)
 <use continut/capitol3/figuri/hol2.png>
 Package pdftex.def Info: continut/capitol3/figuri/hol2.png  used on input line 302.
@@ -1628,18 +1644,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 302--304
 [][]
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (2.83711pt too wide) in paragraph at lines 308--309
-\T1/ptm/m/n/12 cen-tral  re-mar-ca-bil : un sche-let de Pa-le-o-sa-u-rus, mo-de-lat cu de-ta-lii fine []i ilu-mi-nat cu surse direc[]ionale
- []
-
-
-
-[23 <./continut/capitol3/figuri/rayBIMtraced.png> <./continut/capitol3/figuri/panel.png> <./continut/capitol3/figuri/panel2.png>]
-<continut/capitol3/figuri/camera1.png, id=513, 1655.4347pt x 669.2503pt>
+<continut/capitol3/figuri/camera1.png, id=520, 1655.4347pt x 669.2503pt>
 File: continut/capitol3/figuri/camera1.png Graphic file (type png)
 <use continut/capitol3/figuri/camera1.png>
 Package pdftex.def Info: continut/capitol3/figuri/camera1.png  used on input line 313.
@@ -1649,7 +1654,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--315
 [][]
  []
 
-<continut/capitol3/figuri/camera1_2.png, id=514, 1666.72687pt x 679.03688pt>
+<continut/capitol3/figuri/camera1_2.png, id=521, 1666.72687pt x 679.03688pt>
 File: continut/capitol3/figuri/camera1_2.png Graphic file (type png)
 <use continut/capitol3/figuri/camera1_2.png>
 Package pdftex.def Info: continut/capitol3/figuri/camera1_2.png  used on input line 318.
@@ -1659,7 +1664,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 318--320
 [][]
  []
 
-<continut/capitol3/figuri/camera_2.png, id=515, 1653.92906pt x 691.08188pt>
+<continut/capitol3/figuri/camera_2.png, id=522, 1653.92906pt x 691.08188pt>
 File: continut/capitol3/figuri/camera_2.png Graphic file (type png)
 <use continut/capitol3/figuri/camera_2.png>
 Package pdftex.def Info: continut/capitol3/figuri/camera_2.png  used on input line 329.
@@ -1669,7 +1674,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 329--331
 [][]
  []
 
-<continut/capitol3/figuri/camera2_2.png, id=516, 1660.70438pt x 681.29532pt>
+<continut/capitol3/figuri/camera2_2.png, id=523, 1660.70438pt x 681.29532pt>
 File: continut/capitol3/figuri/camera2_2.png Graphic file (type png)
 <use continut/capitol3/figuri/camera2_2.png>
 Package pdftex.def Info: continut/capitol3/figuri/camera2_2.png  used on input line 334.
@@ -1685,12 +1690,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [24 <./continut/capitol3/figuri/hol.png> <./continut/capitol3/figuri/hol2.png> <./continut/capitol3/figuri/camera1.png> <./continut/capitol3/figuri/camera1_2.png>]
-<continut/capitol3/figuri/iteme.png, id=527, 1655.4347pt x 679.03688pt>
+<continut/capitol3/figuri/iteme.png, id=534, 1655.4347pt x 679.03688pt>
 File: continut/capitol3/figuri/iteme.png Graphic file (type png)
 <use continut/capitol3/figuri/iteme.png>
 Package pdftex.def Info: continut/capitol3/figuri/iteme.png  used on input line 348.
 (pdftex.def)             Requested size: 341.43306pt x 140.05309pt.
-<continut/capitol3/figuri/afara.png, id=528, 1668.2325pt x 669.2503pt>
+<continut/capitol3/figuri/afara.png, id=535, 1668.2325pt x 669.2503pt>
 File: continut/capitol3/figuri/afara.png Graphic file (type png)
 <use continut/capitol3/figuri/afara.png>
 Package pdftex.def Info: continut/capitol3/figuri/afara.png  used on input line 360.
@@ -1700,7 +1705,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 360--362
 [][]
  []
 
-<continut/capitol3/figuri/afara2.png, id=529, 1654.68187pt x 673.76718pt>
+<continut/capitol3/figuri/afara2.png, id=536, 1654.68187pt x 673.76718pt>
 File: continut/capitol3/figuri/afara2.png Graphic file (type png)
 <use continut/capitol3/figuri/afara2.png>
 Package pdftex.def Info: continut/capitol3/figuri/afara2.png  used on input line 365.
@@ -1716,7 +1721,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [25 <./continut/capitol3/figuri/camera_2.png> <./continut/capitol3/figuri/camera2_2.png> <./continut/capitol3/figuri/iteme.png>]
-<continut/capitol3/figuri/VR_Pawn.png, id=539, 1340.00626pt x 604.50844pt>
+<continut/capitol3/figuri/VR_Pawn.png, id=546, 1340.00626pt x 604.50844pt>
 File: continut/capitol3/figuri/VR_Pawn.png Graphic file (type png)
 <use continut/capitol3/figuri/VR_Pawn.png>
 Package pdftex.def Info: continut/capitol3/figuri/VR_Pawn.png  used on input line 384.
@@ -1729,7 +1734,7 @@ Overfull \hbox (7.41312pt too wide) in paragraph at lines 391--392
 
 
 [26 <./continut/capitol3/figuri/afara.png> <./continut/capitol3/figuri/afara2.png> <./continut/capitol3/figuri/VR_Pawn.png>]
-<continut/capitol3/figuri/SmoothMove.png, id=549, 1008.01593pt x 353.82187pt>
+<continut/capitol3/figuri/SmoothMove.png, id=556, 1008.01593pt x 353.82187pt>
 File: continut/capitol3/figuri/SmoothMove.png Graphic file (type png)
 <use continut/capitol3/figuri/SmoothMove.png>
 Package pdftex.def Info: continut/capitol3/figuri/SmoothMove.png  used on input line 412.
@@ -1737,7 +1742,7 @@ Package pdftex.def Info: continut/capitol3/figuri/SmoothMove.png  used on input 
 
 
 [27 <./continut/capitol3/figuri/SmoothMove.png>]
-<continut/capitol3/figuri/step_grass.png, id=557, 766.36313pt x 645.91313pt>
+<continut/capitol3/figuri/step_grass.png, id=564, 766.36313pt x 645.91313pt>
 File: continut/capitol3/figuri/step_grass.png Graphic file (type png)
 <use continut/capitol3/figuri/step_grass.png>
 Package pdftex.def Info: continut/capitol3/figuri/step_grass.png  used on input line 433.
@@ -1747,17 +1752,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--435
 [][]
  []
 
-<continut/capitol3/figuri/step_wood.png, id=558, 382.42876pt x 612.03656pt>
+<continut/capitol3/figuri/step_wood.png, id=565, 382.42876pt x 612.03656pt>
 File: continut/capitol3/figuri/step_wood.png Graphic file (type png)
 <use continut/capitol3/figuri/step_wood.png>
 Package pdftex.def Info: continut/capitol3/figuri/step_wood.png  used on input line 438.
 (pdftex.def)             Requested size: 237.01584pt x 170.71533pt.
-<continut/capitol3/figuri/Smooth_Move_Complex.png, id=559, 1011.02719pt x 316.93407pt>
+<continut/capitol3/figuri/Smooth_Move_Complex.png, id=566, 1011.02719pt x 316.93407pt>
 File: continut/capitol3/figuri/Smooth_Move_Complex.png Graphic file (type png)
 <use continut/capitol3/figuri/Smooth_Move_Complex.png>
 Package pdftex.def Info: continut/capitol3/figuri/Smooth_Move_Complex.png  used on input line 451.
 (pdftex.def)             Requested size: 341.43306pt x 107.03075pt.
-<continut/capitol3/figuri/phys.png, id=560, 913.91437pt x 331.99031pt>
+<continut/capitol3/figuri/phys.png, id=567, 913.91437pt x 331.99031pt>
 File: continut/capitol3/figuri/phys.png Graphic file (type png)
 <use continut/capitol3/figuri/phys.png>
 Package pdftex.def Info: continut/capitol3/figuri/phys.png  used on input line 465.
@@ -1767,7 +1772,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 465--467
 [][]
  []
 
-<continut/capitol3/figuri/phys_apply.png, id=561, 408.77719pt x 126.4725pt>
+<continut/capitol3/figuri/phys_apply.png, id=568, 408.77719pt x 126.4725pt>
 File: continut/capitol3/figuri/phys_apply.png Graphic file (type png)
 <use continut/capitol3/figuri/phys_apply.png>
 Package pdftex.def Info: continut/capitol3/figuri/phys_apply.png  used on input line 470.
@@ -1778,7 +1783,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [28 <./continut/capitol3/figuri/step_grass.png> <./continut/capitol3/figuri/step_wood.png> <./continut/capitol3/figuri/Smooth_Move_Complex.png>]
-<continut/capitol3/figuri/SmoothTurn.png, id=571, 788.19469pt x 240.9pt>
+<continut/capitol3/figuri/SmoothTurn.png, id=578, 788.19469pt x 240.9pt>
 File: continut/capitol3/figuri/SmoothTurn.png Graphic file (type png)
 <use continut/capitol3/figuri/SmoothTurn.png>
 Package pdftex.def Info: continut/capitol3/figuri/SmoothTurn.png  used on input line 497.
@@ -1795,7 +1800,7 @@ Overfull \hbox (5.3568pt too wide) in paragraph at lines 547--548
 []\T1/ptm/b/n/12 Foliage \T1/ptm/m/n/12 - con-tro-leaz  nive-lul de de-ta-liu al vegeta[]iei, in-clu-siv com-por-ta-men-tul di-na-mic în condi[]ii
  []
 
-<continut/capitol3/figuri/main_menu_1.png, id=585, 1422.81563pt x 950.04938pt>
+<continut/capitol3/figuri/main_menu_1.png, id=592, 1422.81563pt x 950.04938pt>
 File: continut/capitol3/figuri/main_menu_1.png Graphic file (type png)
 <use continut/capitol3/figuri/main_menu_1.png>
 Package pdftex.def Info: continut/capitol3/figuri/main_menu_1.png  used on input line 556.
@@ -1805,33 +1810,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 556--558
 [][]
  []
 
-<continut/capitol3/figuri/menu4.png, id=586, 776.14969pt x 444.15938pt>
+<continut/capitol3/figuri/menu4.png, id=593, 776.14969pt x 444.15938pt>
 File: continut/capitol3/figuri/menu4.png Graphic file (type png)
 <use continut/capitol3/figuri/menu4.png>
 Package pdftex.def Info: continut/capitol3/figuri/menu4.png  used on input line 561.
 (pdftex.def)             Requested size: 237.01546pt x 170.71384pt.
-<continut/capitol3/figuri/Main_show.png, id=587, 1331.72531pt x 361.35pt>
+<continut/capitol3/figuri/Main_show.png, id=594, 1331.72531pt x 361.35pt>
 File: continut/capitol3/figuri/Main_show.png Graphic file (type png)
 <use continut/capitol3/figuri/Main_show.png>
 Package pdftex.def Info: continut/capitol3/figuri/Main_show.png  used on input line 572.
 (pdftex.def)             Requested size: 398.33858pt x 108.08052pt.
 
 
-[31 <./continut/capitol3/figuri/main_menu_1.png> <./continut/capitol3/figuri/menu4.png> <./continut/capitol3/figuri/Main_show.png>]
-<continut/capitol3/figuri/Main_menu_graph.png, id=597, 1593.70406pt x 544.28343pt>
+[31 <./continut/capitol3/figuri/main_menu_1.png> <./continut/capitol3/figuri/menu4.png>]
+<continut/capitol3/figuri/Main_menu_graph.png, id=602, 1593.70406pt x 544.28343pt>
 File: continut/capitol3/figuri/Main_menu_graph.png Graphic file (type png)
 <use continut/capitol3/figuri/Main_menu_graph.png>
 Package pdftex.def Info: continut/capitol3/figuri/Main_menu_graph.png  used on input line 587.
 (pdftex.def)             Requested size: 398.33858pt x 136.0373pt.
-<continut/capitol3/figuri/ClickSim.png, id=598, 1181.91562pt x 639.89063pt>
+<continut/capitol3/figuri/ClickSim.png, id=603, 1181.91562pt x 639.89063pt>
 File: continut/capitol3/figuri/ClickSim.png Graphic file (type png)
 <use continut/capitol3/figuri/ClickSim.png>
 Package pdftex.def Info: continut/capitol3/figuri/ClickSim.png  used on input line 595.
 (pdftex.def)             Requested size: 398.33858pt x 215.65596pt.
 
 
-[32 <./continut/capitol3/figuri/Main_menu_graph.png> <./continut/capitol3/figuri/ClickSim.png>]
-<continut/capitol3/figuri/settings2.png, id=607, 1500.35532pt x 529.98pt>
+[32 <./continut/capitol3/figuri/Main_show.png> <./continut/capitol3/figuri/Main_menu_graph.png>]
+<continut/capitol3/figuri/settings2.png, id=612, 1500.35532pt x 529.98pt>
 File: continut/capitol3/figuri/settings2.png Graphic file (type png)
 <use continut/capitol3/figuri/settings2.png>
 Package pdftex.def Info: continut/capitol3/figuri/settings2.png  used on input line 621.
@@ -1841,7 +1846,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 621--623
 [][]
  []
 
-<continut/capitol3/figuri/settings3.png, id=608, 1388.93906pt x 864.22874pt>
+<continut/capitol3/figuri/settings3.png, id=613, 1388.93906pt x 864.22874pt>
 File: continut/capitol3/figuri/settings3.png Graphic file (type png)
 <use continut/capitol3/figuri/settings3.png>
 Package pdftex.def Info: continut/capitol3/figuri/settings3.png  used on input line 626.
@@ -1852,97 +1857,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 626--628
  []
 
 
-Overfull \hbox (0.27287pt too wide) in paragraph at lines 632--633
+Overfull \hbox (0.27287pt too wide) in paragraph at lines 632--634
 []\T1/ptm/m/n/12 Selectarea op[]iunilor se face prin ap -sa-rea bu-toa-ne-lor de-di-cate. Bu-to-nul se-lec-tat este eviden[]iat
  []
 
-<continut/capitol3/figuri/Settings_graph.png, id=609, 1759.32281pt x 564.60938pt>
+<continut/capitol3/figuri/Settings_graph.png, id=614, 1759.32281pt x 564.60938pt>
 File: continut/capitol3/figuri/Settings_graph.png Graphic file (type png)
 <use continut/capitol3/figuri/Settings_graph.png>
-Package pdftex.def Info: continut/capitol3/figuri/Settings_graph.png  used on input line 637.
+Package pdftex.def Info: continut/capitol3/figuri/Settings_graph.png  used on input line 638.
 (pdftex.def)             Requested size: 398.33858pt x 127.83284pt.
-<continut/capitol3/figuri/Graphics.png, id=610, 1753.30031pt x 364.36125pt>
+<continut/capitol3/figuri/Graphics.png, id=615, 1753.30031pt x 364.36125pt>
 File: continut/capitol3/figuri/Graphics.png Graphic file (type png)
 <use continut/capitol3/figuri/Graphics.png>
-Package pdftex.def Info: continut/capitol3/figuri/Graphics.png  used on input line 647.
+Package pdftex.def Info: continut/capitol3/figuri/Graphics.png  used on input line 648.
 (pdftex.def)             Requested size: 398.33858pt x 82.77834pt.
-<continut/capitol3/figuri/FPS.png, id=611, 1577.895pt x 607.51968pt>
+<continut/capitol3/figuri/FPS.png, id=616, 1577.895pt x 607.51968pt>
 File: continut/capitol3/figuri/FPS.png Graphic file (type png)
 <use continut/capitol3/figuri/FPS.png>
-Package pdftex.def Info: continut/capitol3/figuri/FPS.png  used on input line 654.
+Package pdftex.def Info: continut/capitol3/figuri/FPS.png  used on input line 655.
 (pdftex.def)             Requested size: 398.33858pt x 153.36273pt.
-<continut/capitol3/figuri/NvidiaPlugin.png, id=612, 1409.265pt x 813.0375pt>
+<continut/capitol3/figuri/NvidiaPlugin.png, id=617, 1409.265pt x 813.0375pt>
 File: continut/capitol3/figuri/NvidiaPlugin.png Graphic file (type png)
 <use continut/capitol3/figuri/NvidiaPlugin.png>
-Package pdftex.def Info: continut/capitol3/figuri/NvidiaPlugin.png  used on input line 661.
+Package pdftex.def Info: continut/capitol3/figuri/NvidiaPlugin.png  used on input line 662.
 (pdftex.def)             Requested size: 398.33858pt x 229.80759pt.
-<continut/capitol3/figuri/DLSS.png, id=613, 1621.55812pt x 493.0922pt>
+<continut/capitol3/figuri/DLSS.png, id=618, 1621.55812pt x 493.0922pt>
 File: continut/capitol3/figuri/DLSS.png Graphic file (type png)
 <use continut/capitol3/figuri/DLSS.png>
-Package pdftex.def Info: continut/capitol3/figuri/DLSS.png  used on input line 668.
+Package pdftex.def Info: continut/capitol3/figuri/DLSS.png  used on input line 669.
 (pdftex.def)             Requested size: 398.33858pt x 121.1284pt.
-<continut/capitol3/figuri/DLSS_Quality.png, id=614, 1562.83875pt x 579.66562pt>
+<continut/capitol3/figuri/DLSS_Quality.png, id=619, 1562.83875pt x 579.66562pt>
 File: continut/capitol3/figuri/DLSS_Quality.png Graphic file (type png)
 <use continut/capitol3/figuri/DLSS_Quality.png>
-Package pdftex.def Info: continut/capitol3/figuri/DLSS_Quality.png  used on input line 675.
+Package pdftex.def Info: continut/capitol3/figuri/DLSS_Quality.png  used on input line 676.
 (pdftex.def)             Requested size: 398.33858pt x 147.74643pt.
 
 
-[33 <./continut/capitol3/figuri/settings2.png> <./continut/capitol3/figuri/settings3.png> <./continut/capitol3/figuri/Settings_graph.png> <./continut/capitol3/figuri/Graphics.png>]
+[33 <./continut/capitol3/figuri/ClickSim.png> <./continut/capitol3/figuri/settings2.png> <./continut/capitol3/figuri/settings3.png>]
 
-[34 <./continut/capitol3/figuri/FPS.png> <./continut/capitol3/figuri/NvidiaPlugin.png> <./continut/capitol3/figuri/DLSS.png>]
-<continut/capitol3/figuri/SettingCurrent.png, id=637, 1416.04031pt x 400.49625pt>
+[34 <./continut/capitol3/figuri/Settings_graph.png> <./continut/capitol3/figuri/Graphics.png> <./continut/capitol3/figuri/FPS.png>]
+
+[35 <./continut/capitol3/figuri/NvidiaPlugin.png> <./continut/capitol3/figuri/DLSS.png> <./continut/capitol3/figuri/DLSS_Quality.png>]
+<continut/capitol3/figuri/SettingCurrent.png, id=650, 1416.04031pt x 400.49625pt>
 File: continut/capitol3/figuri/SettingCurrent.png Graphic file (type png)
 <use continut/capitol3/figuri/SettingCurrent.png>
-Package pdftex.def Info: continut/capitol3/figuri/SettingCurrent.png  used on input line 683.
+Package pdftex.def Info: continut/capitol3/figuri/SettingCurrent.png  used on input line 684.
 (pdftex.def)             Requested size: 398.33858pt x 112.65762pt.
-<continut/capitol3/figuri/DLSSSet.png, id=638, 1068.99374pt x 494.59781pt>
+<continut/capitol3/figuri/DLSSSet.png, id=651, 1068.99374pt x 494.59781pt>
 File: continut/capitol3/figuri/DLSSSet.png Graphic file (type png)
 <use continut/capitol3/figuri/DLSSSet.png>
-Package pdftex.def Info: continut/capitol3/figuri/DLSSSet.png  used on input line 690.
+Package pdftex.def Info: continut/capitol3/figuri/DLSSSet.png  used on input line 691.
 (pdftex.def)             Requested size: 398.33858pt x 184.30394pt.
-<continut/capitol3/figuri/DLSSExtract.png, id=639, 961.34157pt x 297.36093pt>
+<continut/capitol3/figuri/DLSSExtract.png, id=652, 961.34157pt x 297.36093pt>
 File: continut/capitol3/figuri/DLSSExtract.png Graphic file (type png)
 <use continut/capitol3/figuri/DLSSExtract.png>
-Package pdftex.def Info: continut/capitol3/figuri/DLSSExtract.png  used on input line 697.
+Package pdftex.def Info: continut/capitol3/figuri/DLSSExtract.png  used on input line 698.
 (pdftex.def)             Requested size: 398.33858pt x 123.21645pt.
 
 
-[35 <./continut/capitol3/figuri/DLSS_Quality.png> <./continut/capitol3/figuri/SettingCurrent.png> <./continut/capitol3/figuri/DLSSSet.png>])
+[36 <./continut/capitol3/figuri/SettingCurrent.png> <./continut/capitol3/figuri/DLSSSet.png> <./continut/capitol3/figuri/DLSSExtract.png>])
 
-[36 <./continut/capitol3/figuri/DLSSExtract.png>] (./continut/capitol4/capitol4.tex
+[37]
+
+[38
+
+] (./continut/capitol4/capitol4.tex
 Capitolul 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[37
-
+[39
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[38]
+[40]
 Overfull \hbox (8.1177pt too wide) in paragraph at lines 95--96
 \T1/ptm/m/n/12 OpenHar-dwa-re-Mo-n-i-tor, o aplica[]ie gra-tu-it  care ofer  informa[]ii de-ta-li-ate des-pre tem-pe-ra-turi, frecven[]e,
  []
 
 
 
-[39]
+[41]
 
-[40]
-
-[41
-
-]
-
-[42
-
-]
+[42]
 
 [43
 
@@ -1951,40 +1953,48 @@ Overfull \hbox (8.1177pt too wide) in paragraph at lines 95--96
 [44
 
 ]
-<continut/capitol4/figuri/quiz1.png, id=694, 405.76593pt x 195.73125pt>
-File: continut/capitol4/figuri/quiz1.png Graphic file (type png)
-<use continut/capitol4/figuri/quiz1.png>
-Package pdftex.def Info: continut/capitol4/figuri/quiz1.png  used on input line 312.
-(pdftex.def)             Requested size: 341.43306pt x 164.70282pt.
-<continut/capitol4/figuri/quiz2.png, id=695, 410.2828pt x 195.73125pt>
-File: continut/capitol4/figuri/quiz2.png Graphic file (type png)
-<use continut/capitol4/figuri/quiz2.png>
-Package pdftex.def Info: continut/capitol4/figuri/quiz2.png  used on input line 320.
-(pdftex.def)             Requested size: 341.43306pt x 162.88397pt.
-
 
 [45
 
- <./continut/capitol4/figuri/quiz1.png> <./continut/capitol4/figuri/quiz2.png>]
-<continut/capitol4/figuri/quiz3.png, id=705, 414.79968pt x 216.81pt>
-File: continut/capitol4/figuri/quiz3.png Graphic file (type png)
-<use continut/capitol4/figuri/quiz3.png>
-Package pdftex.def Info: continut/capitol4/figuri/quiz3.png  used on input line 329.
-(pdftex.def)             Requested size: 341.43306pt x 178.46684pt.
-<continut/capitol4/figuri/quiz4.png, id=706, 508.14844pt x 239.39438pt>
-File: continut/capitol4/figuri/quiz4.png Graphic file (type png)
-<use continut/capitol4/figuri/quiz4.png>
-Package pdftex.def Info: continut/capitol4/figuri/quiz4.png  used on input line 337.
-(pdftex.def)             Requested size: 341.43306pt x 160.8573pt.
-
+]
 
 [46
 
- <./continut/capitol4/figuri/quiz3.png> <./continut/capitol4/figuri/quiz4.png>])
+]
+<continut/capitol4/figuri/quiz1.png, id=710, 405.76593pt x 195.73125pt>
+File: continut/capitol4/figuri/quiz1.png Graphic file (type png)
+<use continut/capitol4/figuri/quiz1.png>
+Package pdftex.def Info: continut/capitol4/figuri/quiz1.png  used on input line 327.
+(pdftex.def)             Requested size: 341.43306pt x 164.70282pt.
+<continut/capitol4/figuri/quiz2.png, id=711, 410.2828pt x 195.73125pt>
+File: continut/capitol4/figuri/quiz2.png Graphic file (type png)
+<use continut/capitol4/figuri/quiz2.png>
+Package pdftex.def Info: continut/capitol4/figuri/quiz2.png  used on input line 335.
+(pdftex.def)             Requested size: 341.43306pt x 162.88397pt.
 
-[47]
+
+[47
+
+ <./continut/capitol4/figuri/quiz1.png> <./continut/capitol4/figuri/quiz2.png>]
+<continut/capitol4/figuri/quiz3.png, id=720, 414.79968pt x 216.81pt>
+File: continut/capitol4/figuri/quiz3.png Graphic file (type png)
+<use continut/capitol4/figuri/quiz3.png>
+Package pdftex.def Info: continut/capitol4/figuri/quiz3.png  used on input line 344.
+(pdftex.def)             Requested size: 341.43306pt x 178.46684pt.
+<continut/capitol4/figuri/quiz4.png, id=721, 508.14844pt x 239.39438pt>
+File: continut/capitol4/figuri/quiz4.png Graphic file (type png)
+<use continut/capitol4/figuri/quiz4.png>
+Package pdftex.def Info: continut/capitol4/figuri/quiz4.png  used on input line 352.
+(pdftex.def)             Requested size: 341.43306pt x 160.8573pt.
+
 
 [48
+
+ <./continut/capitol4/figuri/quiz3.png> <./continut/capitol4/figuri/quiz4.png>])
+
+[49]
+
+[50
 
 ] (./continut/capitol5/capitol5.tex
 Capitolul 5.
@@ -1993,25 +2003,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[49
+[51
 
 ])
 
-[50] (./main.bbl)
+[52] (./main.bbl)
 
-[51
+[53
 
 
 ]
 
-[52
+[54
 
 ] (./macros/config_anexe.tex) (./anexe/anexe.tex
 
-[53])
+[55])
 
-[54]
-runsystem(latexminted cleantemp  --timestamp 20250626223837 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+[56]
+runsystem(latexminted cleantemp  --timestamp 20250628183821 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
  (./main.aux)
  ***********
@@ -2026,21 +2036,21 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 545ED915016179B990E87EF3C1171FE4;11152.
+(rerunfilecheck)             Checksum: E9DA2AED71755C6342E2888210EB444D;11152.
  ) 
 Here is how much of TeX's memory you used:
- 33075 strings out of 467886
- 653578 string characters out of 5438218
+ 33101 strings out of 467886
+ 654185 string characters out of 5438218
  1247307 words of memory out of 5000000
- 60845 multiletter control sequences out of 15000+600000
- 734826 words of font info for 173 fonts, out of 8000000 for 9000
+ 60862 multiletter control sequences out of 15000+600000
+ 737674 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  96i,18n,101p,1246b,739s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (64 pages, 79236975 bytes).
+Output written on main.pdf (66 pages, 79324474 bytes).
 PDF statistics:
- 831 PDF objects out of 1000 (max. 8388607)
- 618 compressed objects within 7 object streams
- 170 named destinations out of 1000 (max. 500000)
- 780 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 848 PDF objects out of 1000 (max. 8388607)
+ 632 compressed objects within 7 object streams
+ 178 named destinations out of 1000 (max. 500000)
+ 785 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -105,11 +105,12 @@ Pentru fiecare nivel grafic (Low, Medium, High, Ultra, Cinematic), s-au analizat
 \clearpage
 
 \subsection*{Rezultate testare – NVIDIA RTX 2060 (Mobile)}
-\begin{table}[h!]
+
+\begin{table}[htbp]
 \centering
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|c|c|c|c|c|}
-\hline 
+\hline
 \textbf{Grafică} & \textbf{DLSS} & \textbf{FPS} & \textbf{VRAM (MB)} & \textbf{Comentarii} \\
 \hline
 \multirow{6}{*}{\textbf{Low}} & Ultra Performance & 85 & 5434 & OK \\
@@ -148,14 +149,18 @@ Pentru fiecare nivel grafic (Low, Medium, High, Ultra, Cinematic), s-au analizat
  & Native            & -- & -- & -- \\
 \hline
 \end{tabular}
+\caption{Performanțe RTX 2060 (Mobile) în funcție de presetul grafic și modul DLSS}
+\label{tab:rtx2060}
 \end{table}
 
-Prima generație mobilă cu suport pentru Ray Tracing și DLSS. Performanțele scad semnificativ pe setări grafice ridicate, dar acest comportament este previzibil având în vedere arhitectura sa limitată.
+
+După cum se observă în tabelul 4.1, performanțele scad semnificativ pe presetările High și Ultra, ceea ce era de așteptat având în vedere arhitectura limitată a plăcii RTX 2060 (Mobile).
 
 \clearpage
 
 \subsection*{Rezultate testare – NVIDIA RTX 3070 (Mobile)}
-\begin{table}[h!]
+
+\begin{table}[htbp]
 \centering
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|c|c|c|c|c|}
@@ -192,19 +197,22 @@ Prima generație mobilă cu suport pentru Ray Tracing și DLSS. Performanțele s
 \hline
 \multirow{6}{*}{\textbf{Cinematic}} & Ultra Performance & 23 & 6720 & Nerecomandat \\
  & Performance       & 14 & 6904 & Nerecomandat \\
- & Balanced          & -- & --   & -- \\
- & Quality           & -- & --   & -- \\
- & Native Upscale    & -- & --   & -- \\
- & Native            & -- & --   & -- \\
+ & Balanced          & -- & -- & -- \\
+ & Quality           & -- & -- & -- \\
+ & Native Upscale    & -- & -- & -- \\
+ & Native            & -- & -- & -- \\
 \hline
 \end{tabular}
+\caption{Performanțe RTX 3070 (Mobile) în funcție de presetul grafic și modul DLSS}
+\label{tab:rtx3070}
 \end{table}
 
-Deși este versiunea mobilă, performanțele sunt apropiate de cele ale modelului desktop. Oferă o experiență VR fluidă în majoritatea scenariilor, dar cu limitări vizibile la nivel foarte detaliat.
+După cum se observă în tabelul 4.2, modelul RTX 3070 (Mobile) oferă o experiență VR fluentă la presetările High, dar începe să piardă performanță pe Ultra și Cinematic.
 \clearpage
 
 \subsection*{Rezultate testare – NVIDIA RTX 3070 (Desktop)}
-\begin{table}[h!]
+
+\begin{table}[htbp]
 \centering
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|c|c|c|c|c|}
@@ -247,13 +255,17 @@ Deși este versiunea mobilă, performanțele sunt apropiate de cele ale modelulu
  & Native            & -- & --   & -- \\
 \hline
 \end{tabular}
+\caption{Performanțe RTX 3070 (Desktop) în funcție de presetul grafic și modul DLSS}
+\label{tab:rtx3070desktop}
 \end{table}
 
-DLSS-ul este implementat mai eficient, iar nucleele RT sunt mai numeroase și mai rapide față de varianta mobilă. Placa oferă o experiență VR excelentă, chiar și la setări grafice înalte.
+
+După cum se observă în tabelul 4.3, modelul desktop menține peste 70 FPS pe presetarea High cu DLSS în modul Performance, oferind o experiență VR excelentă chiar și la detalii ridicate.
 \clearpage
 
 \subsection*{Rezultate testare – NVIDIA RTX 4060 (Mobile)}
-\begin{table}[h!]
+
+\begin{table}[htbp]
 \centering
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|c|c|c|c|c|}
@@ -296,14 +308,17 @@ DLSS-ul este implementat mai eficient, iar nucleele RT sunt mai numeroase și ma
  & Native            & -- & -- & -- \\
 \hline
 \end{tabular}
+\caption{Performanțe RTX 4060 (Mobile) în funcție de presetul grafic și modul DLSS}
+\label{tab:rtx4060}
 \end{table}
 
-Diferențele față de RTX 2060 sunt minime la nivel „Low”, însă îmbunătățirile devin evidente la activarea Ray Tracing-ului și DLSS-ului, unde RTX 4060 oferă un plus clar de performanță și stabilitate.
+După cum se observă în tabelul 4.4, RTX 4060 (Mobile) depășește consistent RTX 2060 la presetările Medium și High, iar la Low menține deja peste 80 FPS chiar și în modul Quality.
+
 \clearpage
 
 \section{Răspunsurile utilizatorilor ce au testat experiența VR Museum}
 
-Pentru a evalua experiența utilizatorilor în cadrul aplicației VR Museum, a fost realizat un chestionar Google Forms compus din întrebări de tip scală și întrebări deschise. Acesta a fost transmis unui grup restrâns de persoane care au testat aplicația folosind dispozitive compatibile cu realitatea virtuală, în condiții controlate. Scopul a fost acela de a identifica atât nivelul de accesibilitate și confort, cât și posibilele dificultăți tehnice sau sugestii de îmbunătățire.
+Pentru a evalua experiența utilizatorilor în cadrul aplicației VR Museum, a fost realizat un chestionar Google Forms compus din întrebări de tip scală și întrebări deschise, rezultatele fiind afișate ca grafice în figurile 4.1, 4.2, 4.3 și 4.4. Acest chestionar a fost transmis unui grup restrâns de persoane care au testat aplicația folosind dispozitive compatibile cu realitatea virtuală, în condiții controlate. Scopul a fost acela de a identifica atât nivelul de accesibilitate și confort, cât și posibilele dificultăți tehnice sau sugestii de îmbunătățire.
 
 \subsection{Navigarea în mediul virtual}
 \begin{figure} [htp] 

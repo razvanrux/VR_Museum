@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {2.4}Evoluția hardware}{8}{section.2.4}%
 \contentsline {section}{\numberline {2.5}\textbf {D}eep \textbf {L}earning \textbf {S}uper \textbf {S}ampling}{8}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Nanite}{9}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Lumen}{9}{section.2.7}%
+\contentsline {section}{\numberline {2.7}Lumen}{10}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Soluții și proiecte asemănătoare}{10}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Cum se construiește o experiență virtuală?}{10}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Conceptul de realitate virtuală în România}{11}{section.2.10}%
@@ -28,29 +28,29 @@
 \contentsline {section}{\numberline {3.10}VR Pawn}{26}{section.3.10}%
 \contentsline {section}{\numberline {3.11}Movement}{26}{section.3.11}%
 \contentsline {section}{\numberline {3.12}Meniul principal și cel de setări}{30}{section.3.12}%
-\contentsline {section}{\numberline {3.13}Cerințele utilizatorului final}{35}{section.3.13}%
-\contentsline {chapter}{\numberline {4}Testarea aplicației și rezultate experimentale}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Scopul testării}{37}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Metode de rulare și configurații hardware testate}{37}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Modul final (compilat - packaged build)}{37}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Modul dezvoltator (editor Unreal Engine)}{37}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Metode de conectare VR utilizate}{38}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Oculus Link (prin cablu USB-C)}{38}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Oculus Air Link (wireless)}{38}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Virtual Desktop + SteamVR (wireless optimizat)}{38}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Metodologia de testare}{38}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Configurațiile hardware utilizate}{39}{subsection.4.4.1}%
-\contentsline {section}{\numberline {4.5}Rezultatele testării}{40}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Răspunsurile utilizatorilor ce au testat experiența VR Museum}{45}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Navigarea în mediul virtual}{45}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Utilizarea comenzilor și meniurilor}{45}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Nivelul de confort fizic}{46}{subsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.6.4}Funcționalitatea aplicației}{46}{subsection.4.6.4}%
-\contentsline {subsection}{\numberline {4.6.5}Analiza răspunsurilor deschise}{46}{subsection.4.6.5}%
-\contentsline {chapter}{\numberline {5}Concluzii}{49}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Puncte forte ale proiectului}{49}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Dificultăți întâmpinate și soluții aplicate}{49}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Lecții învățate în timpul dezvoltării}{49}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Direcții de dezvoltare viitoare}{50}{section.5.4}%
-\contentsline {chapter}{Bibliografie}{51}{chapter*.52}%
-\contentsline {section}{\numberline {1}Comenzi Console Unreal Engine folosite în VR Museum}{53}{section.0.1}%
+\contentsline {section}{\numberline {3.13}Cerințele utilizatorului final}{36}{section.3.13}%
+\contentsline {chapter}{\numberline {4}Testarea aplicației și rezultate experimentale}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Scopul testării}{39}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Metode de rulare și configurații hardware testate}{39}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Modul final (compilat - packaged build)}{39}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Modul dezvoltator (editor Unreal Engine)}{39}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Metode de conectare VR utilizate}{40}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Oculus Link (prin cablu USB-C)}{40}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Oculus Air Link (wireless)}{40}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Virtual Desktop + SteamVR (wireless optimizat)}{40}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Metodologia de testare}{40}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Configurațiile hardware utilizate}{41}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Rezultatele testării}{42}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Răspunsurile utilizatorilor ce au testat experiența VR Museum}{47}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Navigarea în mediul virtual}{47}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Utilizarea comenzilor și meniurilor}{47}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Nivelul de confort fizic}{48}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Funcționalitatea aplicației}{48}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Analiza răspunsurilor deschise}{48}{subsection.4.6.5}%
+\contentsline {chapter}{\numberline {5}Concluzii}{51}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Puncte forte ale proiectului}{51}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Dificultăți întâmpinate și soluții aplicate}{51}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Lecții învățate în timpul dezvoltării}{51}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Direcții de dezvoltare viitoare}{52}{section.5.4}%
+\contentsline {chapter}{Bibliografie}{53}{chapter*.56}%
+\contentsline {section}{\numberline {1}Comenzi Console Unreal Engine folosite în VR Museum}{55}{section.0.1}%
